@@ -1,0 +1,56 @@
+{
+  // Fonts
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontFamily": "JetBrains Mono, Hack, Consolas",
+  "editor.fontFamily": "GeistMono nerd font, firacode nerd font, jetbrains mono, jetbrains mono, meslolgs nf, hack,  consolas, 'courier new', monospace",
+  "editor.fontSize": 15,
+
+  // Editor and Workbench
+  "editor.minimap.autohide": true,
+  "editor.codeActionsOnSave": {
+    "source.fixall": "explicit"
+  },
+  "editor.smoothScrolling": false,
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.formatOnSave": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.lineNumbers": "relative",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.cursorBlinking": "phase",
+  "editor.fontLigatures": true,
+  "editor.fontVariations": true,
+  "editor.scrollbar.vertical": "hidden",
+  "workbench.editorAssociations": {
+    "*.sqlite": "default"
+  },
+  "workbench.sideBar.location": "right",
+  "workbench.editor.openPositioning": "first",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.layoutControl.enabled": false,
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
+  "window.zoomLevel": 0,
+  "window.titleBarStyle": "custom",
+  "explorer.compactFolders": true,
+  "files.trimTrailingWhitespace": false,
+  "files.exclude": {
+    "**/.git": false
+  },
+  "accessibility.signals.save": {
+    "sound": "userGesture",
+    "announcement": "never"
+  },
+
+  // Language-specific
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Extensions
+  "prettier.requireConfig": true,
+  "vim.smartRelativeLine": true,
+
+  // WSL
+  "security.allowedUNCHosts": ["wsl.localhost"]
+}
