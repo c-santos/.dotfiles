@@ -3,7 +3,7 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "JetBrains Mono, Hack, Consolas",
   "editor.fontFamily": "GeistMono nerd font, jetbrains mono, firacode nerd font, source code pro, meslolgs nf, hack, consolas, 'courier new', monospace",
-  "editor.fontSize": 17,
+  "editor.fontSize": 18,
 
   // Editor and Workbench
   "editor.wordWrap": "on",
@@ -72,7 +72,7 @@
     "<C-s>": false,
     "<C-z>": false,
     "<C-f>": false,
-    "<C-w>": false,
+    "<C-w>": false
   },
   "vim.highlightedyank.enable": true
 }
