@@ -6,6 +6,7 @@
   "editor.fontSize": 17,
 
   // Editor and Workbench
+  "editor.wordWrap": "on",
   "editor.minimap.autohide": true,
   "editor.codeActionsOnSave": {
     "source.fixall": "explicit"
@@ -28,6 +29,8 @@
   "workbench.editor.openPositioning": "first",
   "workbench.iconTheme": "vscode-icons",
   "workbench.layoutControl.enabled": false,
+  "workbench.editor.showTabs": "single",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
   "window.menuBarVisibility": "toggle",
   "window.commandCenter": false,
   "window.zoomLevel": 0,
@@ -63,6 +66,13 @@
     }
   ],
   "vim.leader": "<Space>",
-  "workbench.editor.showTabs": "single",
-  "workbench.colorTheme": "GitHub Dark Dimmed"
+  "vim.useSystemClipboard": true,
+  "vim.handleKeys": {
+    "<C-d>": false,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-f>": false,
+    "<C-w>": false,
+  },
+  "vim.highlightedyank.enable": true
 }
