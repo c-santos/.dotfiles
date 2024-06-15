@@ -1,9 +1,9 @@
 {
   // Fonts
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "JetBrains Mono, Hack, Consolas",
-  "editor.fontFamily": "GeistMono nerd font, firacode nerd font, jetbrains mono, jetbrains mono, meslolgs nf, hack,  consolas, 'courier new', monospace",
-  "editor.fontSize": 15,
+  "editor.fontFamily": "GeistMono nerd font, jetbrains mono, firacode nerd font, source code pro, meslolgs nf, hack, consolas, 'courier new', monospace",
+  "editor.fontSize": 17,
 
   // Editor and Workbench
   "editor.minimap.autohide": true,
@@ -28,7 +28,7 @@
   "workbench.editor.openPositioning": "first",
   "workbench.iconTheme": "vscode-icons",
   "workbench.layoutControl.enabled": false,
-  "window.menuBarVisibility": "compact",
+  "window.menuBarVisibility": "toggle",
   "window.commandCenter": false,
   "window.zoomLevel": 0,
   "window.titleBarStyle": "custom",
@@ -51,6 +51,18 @@
   "prettier.requireConfig": true,
   "vim.smartRelativeLine": true,
 
+
   // WSL
-  "security.allowedUNCHosts": ["wsl.localhost"]
+  "security.allowedUNCHosts": ["wsl.localhost"],
+
+  // VIM
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.leader": "<Space>",
+  "workbench.editor.showTabs": "single",
+  "workbench.colorTheme": "GitHub Dark Dimmed"
 }
