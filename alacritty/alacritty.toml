@@ -1,0 +1,19 @@
+import = [
+    "~/AppData/Roaming/alacritty/kanagawa_dragon.toml"
+]
+working_directory = "E:/Files/dev"
+live_config_reload = true
+
+[shell]
+program = "powershell"
+
+[window]
+dynamic_padding = true
+dynamic_title = true
+
+[font]
+normal = { family = "JetBrains Mono" }
+size = 13
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
