@@ -4,6 +4,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="sorin" # set by `omz`
 
+CASE_SENSITIVE=false
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
@@ -49,11 +50,11 @@ source $ZSH/oh-my-zsh.sh
 alias zshconf="nvim ~/.zshrc"
 alias nvconf="cd ~/.config/nvim"
 # Linux
-# alias alaconf="nvim ~/.config/alacritty"
+alias alaconf="nvim ~/.config/alacritty"
 # WSl
-alias alaconf="nvim /mnt/c/Users/jcms1/AppData/Roaming/alacritty"
+# alias alaconf="nvim /mnt/c/Users/jcms1/AppData/Roaming/alacritty"
 alias tmuxconf="nvim ~/.tmux.conf"
-alias dotfiles="nvim ~/.dotfiles"
+alias dotfiles="cd ~/.dotfiles"
 
 # Zsh Quick Refresh
 alias refresh="source ~/.zshrc"

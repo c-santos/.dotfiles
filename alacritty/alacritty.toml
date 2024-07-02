@@ -1,15 +1,26 @@
+# import = [
+#     "~/AppData/Roaming/alacritty/kanagawa_dragon.toml"
+# ]
+
 import = [
-    "~/AppData/Roaming/alacritty/kanagawa_dragon.toml"
+    "~/.config/alacritty/kanagawa_dragon.toml"
 ]
+
 live_config_reload = true
 
 [window]
-dynamic_padding = true
+# MacOS config
+padding = { x = 16, y = 32 }
+decorations = "Transparent"
+
+# WSL config
 dynamic_title = true
+dynamic_padding = true
 
 [font]
-normal = { family = "JetBrains Mono" }
-size = 13
+normal = { family = "FiraCode Nerd Font" }
+size = 16
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
+
