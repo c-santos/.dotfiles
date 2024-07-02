@@ -1,11 +1,7 @@
 import = [
     "~/AppData/Roaming/alacritty/kanagawa_dragon.toml"
 ]
-working_directory = "E:/Files/dev"
 live_config_reload = true
-
-[shell]
-program = "powershell"
 
 [window]
 dynamic_padding = true
