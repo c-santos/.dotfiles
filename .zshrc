@@ -53,6 +53,7 @@ alias nvconf="cd ~/.config/nvim"
 # WSl
 alias alaconf="nvim /mnt/c/Users/jcms1/AppData/Roaming/alacritty"
 alias tmuxconf="nvim ~/.tmux.conf"
+alias dotfiles="nvim ~/.dotfiles"
 
 # Zsh Quick Refresh
 alias refresh="source ~/.zshrc"
@@ -81,7 +82,8 @@ alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 
 # Fuzzy Find Aliases
-# fuzzy find - deps: fzf, fd
+# deps: fzf, fd
+# Uncomment below based on OS.
 
 # MacOS Version
 # find_project() {
@@ -93,8 +95,8 @@ alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 #         cd $proj
 #     fi
 # }
-#
 # alias f='fd --hidden --exclude .git| fzf-tmux -p | xargs nvim'
+# END
 
 # Debian Version
 find_project() {
@@ -107,4 +109,6 @@ find_project() {
     fi
 }
 alias f='fdfind --hidden --exclude .git| fzf-tmux -p | xargs nvim'
+# END
+
 alias fp=find_project
