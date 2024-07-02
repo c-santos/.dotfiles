@@ -1,6 +1,10 @@
 
 # Dotfiles
 
+## TODO
+
+- [ ] Create macos and wsl versions of each file if needed e.g `alacritty.macos.toml` and `alacritty.wsl.toml`.
+
 ## Creating a symlink
 
 ``` sh
@@ -45,3 +49,20 @@ sudo apt install fd-find
 ```
 
 ## Alacritty
+
+- FiraCode Nerd Font
+- Kanagawa Dragon Theme
+
+## tmux
+
+- tmp
+- kanagawa-tmux
+
+## Neovim
+
+- craziness
+
+## VSCode
+
+- keybindings json
+- settings json
