@@ -48,7 +48,11 @@ source $ZSH/oh-my-zsh.sh
 # Config Quick Access
 alias zshconf="nvim ~/.zshrc"
 alias nvconf="cd ~/.config/nvim"
-alias alaconf="nvim ~/.config/alacritty"
+# Linux
+# alias alaconf="nvim ~/.config/alacritty"
+# WSl
+alias alaconf="nvim /mnt/c/Users/jcms1/AppData/Roaming/alacritty"
+alias tmuxconf="nvim ~/.tmux.conf"
 
 # Zsh Quick Refresh
 alias refresh="source ~/.zshrc"
@@ -77,18 +81,30 @@ alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 
 # Fuzzy Find Aliases
-#
 # fuzzy find - deps: fzf, fd
-alias f='fd --hidden --exclude .git| fzf-tmux -p | xargs nvim'
 
+# MacOS Version
+# find_project() {
+#     local proj
+#     proj=$(fd . ~/Dev --type d -a -d 1 | fzf-tmux -p)
+#
+#     if [[ -n $proj ]] then
+#         echo "\n\t🛬 You are now in: $proj\n"
+#         cd $proj
+#     fi
+# }
+#
+# alias f='fd --hidden --exclude .git| fzf-tmux -p | xargs nvim'
+
+# Debian Version
 find_project() {
     local proj
-    proj=$(fd . ~/Dev --type d -a -d 1 | fzf-tmux -p)
+    proj=$(fdfind . ~/Dev --type d -a -d 1 | fzf-tmux -p)
 
     if [[ -n $proj ]] then
-        echo "\n🛬 You are now in: $proj\n"
+        echo "\n\t🛬 You are now in: $proj\n"
         cd $proj
     fi
 }
-
+alias f='fdfind --hidden --exclude .git| fzf-tmux -p | xargs nvim'
 alias fp=find_project
