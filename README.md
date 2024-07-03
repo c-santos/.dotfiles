@@ -48,6 +48,12 @@ brew install fd
 sudo apt install fd-find
 ```
 
+#### Create symlink
+
+```sh
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+```
+
 ## Alacritty
 
 - FiraCode Nerd Font
