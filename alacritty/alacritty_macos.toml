@@ -1,0 +1,16 @@
+import = [
+    "~/.config/alacritty/kanagawa_dragon.toml"
+]
+
+live_config_reload = true
+
+[window]
+padding = { x = 16, y = 32 }
+decorations = "Transparent"
+
+[font]
+normal = { family = "FiraCode Nerd Font" }
+size = 16
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
