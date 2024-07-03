@@ -90,7 +90,12 @@ ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml ~/AppData/Roaming/alacritty/kan
 
 ## Neovim
 
-- craziness
+```sh
+ln -s ~/.dotfiles/nvim ~/.config/nvim
+```
+
+Load initial Neovim config to allow Lazy and Mason to install
+
 
 ## VSCode
 
