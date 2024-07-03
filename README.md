@@ -7,20 +7,20 @@ repo for Dotfiles
 - [ ] Install scripts.
 - [ ] Find fix to be able to symlink Alacritty config for Windows machine.
 
-## Creating a symlink
-
-``` sh
-ln -s ~/path/to/original ~/path/to/destination
-```
-
 **Important note on Alacritty on Windows/WSL**
 
-Creating a symlink from WSL to the AppData/Roaming directory causes issues
+Creating a symlink from WSL to the `AppData/Roaming` directory causes issues
 with permissions (probably) and Alacritty is not able to load the config.
 So you have to manually copy and paste the `alacritty_wsl.toml` and `kanagawa_dragon.toml` files to Windows' config directory for Alacritty.
 
 Sadly, this makes it to not be tracked by Git and requires manual updating :(
 
+
+## Creating a symlink
+
+``` sh
+ln -s ~/path/to/original ~/path/to/destination
+```
 
 ## zsh
 
