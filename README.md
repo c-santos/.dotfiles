@@ -4,13 +4,22 @@ repo for Dotfiles
 
 ## Todo
 
-- [ ] Install scripts
+- [ ] Install scripts.
+- [ ] Find fix to be able to symlink Alacritty config for Windows machine.
 
 ## Creating a symlink
 
 ``` sh
 ln -s ~/path/to/original ~/path/to/destination
 ```
+
+**Important note on Alacritty on Windows/WSL**
+
+Creating a symlink from WSL to the AppData/Roaming directory causes issues
+with permissions (probably) and Alacritty is not able to load the config.
+So you have to manually copy and paste the `alacritty_wsl.toml` and `kanagawa_dragon.toml` files to Windows' config directory for Alacritty.
+
+Sadly, this makes it to not be tracked by Git and requires manual updating :(
 
 
 ## zsh
@@ -80,11 +89,11 @@ ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml ~/.config/alacritty/kanagawa_dr
 For WSL,
 
 ```sh
-ln -s ~/.dotfiles/alacritty/alacritty_wsl.toml ~/AppData/Roaming/alacritty/alacritty.toml
+ln -s ~/.dotfiles/alacritty/alacritty_wsl.toml /mnt/c/Users/{username}/AppData/Roaming/alacritty/alacritty.toml
 ```
 
 ```sh
-ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml ~/AppData/Roaming/alacritty/kanagawa_dragon.toml
+ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml /mnt/c/Users/{username}/AppData/Roaming/alacritty/kanagawa_dragon.toml
 ```
 
 - FiraCode Nerd Font
