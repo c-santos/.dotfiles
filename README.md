@@ -51,10 +51,34 @@ sudo apt install fd-find
 #### Create symlink
 
 ```sh
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.zshrc.macos ~/.zshrc
+```
+
+```sh
+ln -s ~/.dotfiles/.zshrc.wsl ~/.zshrc
 ```
 
 ## Alacritty
+
+For MacOS,
+
+```sh
+ln -s ~/.dotfiles/alacritty/alacritty_macos.toml ~/.config/alacritty/alacritty.toml
+```
+
+```sh
+ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml ~/.config/alacritty/kanagawa_dragon.toml
+```
+
+For WSL,
+
+```sh
+ln -s ~/.dotfiles/alacritty/alacritty_wsl.toml ~/AppData/Roaming/alacritty/alacritty.toml
+```
+
+```sh
+ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml ~/AppData/Roaming/alacritty/kanagawa_dragon.toml
+```
 
 - FiraCode Nerd Font
 - Kanagawa Dragon Theme
