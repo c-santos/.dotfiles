@@ -1,6 +1,7 @@
 import = [
-    "~/.config/alacritty/kanagawa_dragon.toml"
+    "~/AppData/Roaming/alacritty/kanagawa_dragon.toml"
 ]
+
 
 live_config_reload = true
 
