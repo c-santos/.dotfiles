@@ -5,7 +5,7 @@ import = [
 live_config_reload = true
 
 [window]
-padding = { x = 16, y = 32 }
+padding = { x = 8, y = 32 }
 decorations = "Transparent"
 
 [font]
