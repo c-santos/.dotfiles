@@ -35,12 +35,11 @@ return {
         end
 
         local cmp = require("cmp")
-        local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
             "force",
             {},
             vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities()
+            require("cmp_nvim_lsp").default_capabilities()
         )
         require("fidget").setup({})
         require("mason").setup({})
@@ -117,6 +116,10 @@ return {
             matching = { disallow_symbol_nonprefix_matching = false }
         })
 
+        -- Diagnostics
+        vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+        vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
         vim.diagnostic.config({
             virtual_text = false,
             virtual_lines = true,
