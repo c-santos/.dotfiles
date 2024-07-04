@@ -1,5 +1,5 @@
-local noremap = function (mode, keys, cmd)
-   vim.keymap.set(mode, keys, cmd)
+local noremap = function (mode, keys, cmd, opts)
+   vim.keymap.set(mode, keys, cmd, opts)
 end
 
 -- map leader
