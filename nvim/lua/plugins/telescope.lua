@@ -1,22 +1,56 @@
 return {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' },
     config = function()
+        local actions = require("telescope.actions")
+        require("telescope").setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<esc>"] = actions.close
+                    }
+                },
+                layout_strategy = 'horizontal',
+                layout_config = {
+                    preview_width = 0.6,
+                    horizontal = {
+                        size = {
+                            width = "100%",
+                            height = "100%"
+                        }
+                    }
+                }
+            }
+        })
+
         local builtin = require("telescope.builtin")
-        local themes = require("telescope.themes")
+
+        -- Search git files
         vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+
+        -- Search all project files
         vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
+
+        -- Search string
         vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
-        vim.keymap.set("n", "<leader>pws", function ()
+
+        -- Search string under cursor
+        vim.keymap.set("n", "<leader>pws", function()
             local word = vim.fn.expand("<cword>")
             builtin.grep_string({ search = word })
         end, {})
-        vim.keymap.set("n", "<leader>pWs", function ()
+
+        -- Search string under cursor big
+        vim.keymap.set("n", "<leader>pWs", function()
             local word = vim.fn.expand("<cWORD>")
             builtin.grep_string({ search = word })
         end, {})
-        vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
-        vim.keymap.set("n", "gr", builtin.lsp_references, {})
-        vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
+
+        -- Search buffers
+        vim.keymap.set("n", "<leader>pb", builtin.buffers, {})
+
+        -- Git status
+        vim.keymap.set("n", "<leader>gg", builtin.git_status, {})
     end
 }

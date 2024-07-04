@@ -15,6 +15,25 @@ return {
         "j-hui/fidget.nvim",
     },
     config = function()
+        -- This function runs when an LSP attaches to the buffer.
+        local on_attach = function(_, bufnr)
+            local nmap = function(keys, func, desc)
+                if desc then
+                    desc = 'LSP: ' .. desc
+                end
+
+                vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+            end
+
+            nmap("K", vim.lsp.buf.hover, "Hover documentation.")
+            nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+            nmap("<leader>f", vim.lsp.buf.format, "[F]ormat")
+            nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+            nmap("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+            nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+            nmap("gtd", vim.lsp.buf.type_definition, "[G]oto [T]ype [D]efinition")
+        end
+
         local cmp = require("cmp")
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
@@ -30,7 +49,8 @@ return {
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
+                        capabilities = capabilities,
+                        on_attach = on_attach
                     }
                 end,
 
@@ -38,9 +58,10 @@ return {
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
                         capabilities = capabilities,
+                        on_attach = on_attach,
                         settings = {
                             Lua = {
-                                runtime = { version = "Lua 5.1" },
+                                runtime = { version = "LuaJIT" },
                                 diagnostics = {
                                     globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
                                 }
@@ -95,10 +116,6 @@ return {
             }),
             matching = { disallow_symbol_nonprefix_matching = false }
         })
-
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-        vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
-        vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
         vim.diagnostic.config({
             virtual_text = false,
