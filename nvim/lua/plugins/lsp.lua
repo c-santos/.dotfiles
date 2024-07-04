@@ -119,6 +119,7 @@ return {
 
         vim.diagnostic.config({
             virtual_text = false,
+            virtual_lines = true,
             float = {
                 focusable = false,
                 style = "minimal",
