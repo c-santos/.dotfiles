@@ -15,6 +15,12 @@ return {
         "j-hui/fidget.nvim",
     },
     config = function()
+
+        -- Setup plugins without custom config
+        require("fidget").setup({})
+        require("mason").setup({})
+
+        -- Define on_attach function for LSP.
         -- This function runs when an LSP attaches to the buffer.
         local on_attach = function(_, bufnr)
             local nmap = function(keys, func, desc)
@@ -34,6 +40,7 @@ return {
             nmap("gtd", vim.lsp.buf.type_definition, "[G]oto [T]ype [D]efinition")
         end
 
+        -- Combine LSP capabilities and native capabilities.
         local cmp = require("cmp")
         local capabilities = vim.tbl_deep_extend(
             "force",
@@ -41,8 +48,8 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             require("cmp_nvim_lsp").default_capabilities()
         )
-        require("fidget").setup({})
-        require("mason").setup({})
+
+        -- Setup Mason to handle LSPs.
         require("mason-lspconfig").setup({
             ensure_installed = language_servers,
             handlers = {
