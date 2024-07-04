@@ -10,8 +10,9 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+        "rafamadriz/friendly-snippets",
+        "L3MON4D3/LuaSnip",
         "j-hui/fidget.nvim",
         "ray-x/lsp_signature.nvim"
     },
@@ -20,6 +21,7 @@ return {
         -- Setup plugins without custom config
         require("fidget").setup({})
         require("mason").setup({})
+        require("luasnip.loaders.from_vscode").lazy_load()
 
         -- Define on_attach function for LSP.
         -- This function runs when an LSP attaches to the buffer.
