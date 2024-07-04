@@ -5,10 +5,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-    group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
-    callback = function()
-        vim.diagnostic.open_float(nil, { focus = false })
-    end
-})
