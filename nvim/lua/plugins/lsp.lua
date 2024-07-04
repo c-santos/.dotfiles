@@ -17,7 +17,6 @@ return {
         "ray-x/lsp_signature.nvim"
     },
     config = function()
-
         -- Setup plugins without custom config
         require("fidget").setup({})
         require("mason").setup({})
@@ -26,7 +25,6 @@ return {
         -- Define on_attach function for LSP.
         -- This function runs when an LSP attaches to the buffer.
         local on_attach = function(_, bufnr)
-
             -- Remaps
             local nmap = function(keys, func, desc)
                 if desc then
@@ -52,13 +50,12 @@ return {
                     border = "rounded",
                 },
                 hint_prefix = {
-                    above = "↙ ",  -- when the hint is on the line above the current line
-                    current = "← ",  -- when the hint is on the same line
-                    below = "↖ "  -- when the hint is on the line below the current line
+                    above = "↙ ", -- when the hint is on the line above the current line
+                    current = "← ", -- when the hint is on the same line
+                    below = "↖ " -- when the hint is on the line below the current line
                 }
             }
             require("lsp_signature").on_attach(signature_help, bufnr)
-
         end
 
         -- Combine LSP capabilities and native capabilities.
@@ -77,7 +74,10 @@ return {
                 function(server_name)
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities,
-                        on_attach = on_attach
+                        on_attach = on_attach,
+                        handlers = {
+                            ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+                        }
                     }
                 end,
 
@@ -86,6 +86,9 @@ return {
                     lspconfig.lua_ls.setup {
                         capabilities = capabilities,
                         on_attach = on_attach,
+                        handlers = {
+                            ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+                        },
                         settings = {
                             Lua = {
                                 runtime = { version = "LuaJIT" },
