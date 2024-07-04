@@ -13,6 +13,7 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
+        "ray-x/lsp_signature.nvim"
     },
     config = function()
 
@@ -23,6 +24,8 @@ return {
         -- Define on_attach function for LSP.
         -- This function runs when an LSP attaches to the buffer.
         local on_attach = function(_, bufnr)
+
+            -- Remaps
             local nmap = function(keys, func, desc)
                 if desc then
                     desc = 'LSP: ' .. desc
@@ -38,6 +41,22 @@ return {
             nmap("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
             nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
             nmap("gtd", vim.lsp.buf.type_definition, "[G]oto [T]ype [D]efinition")
+
+
+            -- Signature help
+            local signature_help = {
+                bind = true,
+                handler_opts = {
+                    border = "rounded",
+                },
+                hint_prefix = {
+                    above = "↙ ",  -- when the hint is on the line above the current line
+                    current = "← ",  -- when the hint is on the same line
+                    below = "↖ "  -- when the hint is on the line below the current line
+                }
+            }
+            require("lsp_signature").on_attach(signature_help, bufnr)
+
         end
 
         -- Combine LSP capabilities and native capabilities.
