@@ -80,6 +80,10 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
 # Fuzzy Find Aliases
 # deps: fzf, fd
 # Uncomment below based on OS.
@@ -98,3 +102,5 @@ alias f='fdfind --hidden --exclude .git| fzf-tmux -p | xargs nvim'
 # END
 
 alias fp=find_project
+alias muxconf="cd ~/.config/tmuxinator"
+alias mux="tmuxinator"
