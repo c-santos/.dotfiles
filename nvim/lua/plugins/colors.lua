@@ -39,7 +39,9 @@ return {
         priority = 1000,
         config = function ()
             require('catppuccin').setup({
-                flavour = "macchiato"
+                flavour = "auto",
+                transparent_background = true,
+                term_colors = true
             })
         end
     }
