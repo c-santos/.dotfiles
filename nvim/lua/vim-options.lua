@@ -14,6 +14,7 @@ vim.opt.incsearch = true
 vim.opt.smartcase = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
