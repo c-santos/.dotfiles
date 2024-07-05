@@ -5,8 +5,13 @@ import = [
 live_config_reload = true
 
 [window]
-padding = { x = 8, y = 32 }
-decorations = "Transparent"
+decorations = "Full"
+startup_mode = "Fullscreen"
+decorations_theme_variant = "Dark"
+
+[bell]
+animation = "Ease"
+duration = 1000
 
 [font]
 normal = { family = "FiraCode Nerd Font" }
@@ -14,3 +19,12 @@ size = 16
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
+
+[[hints.enabled]]
+command = "open" # On macOS
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
