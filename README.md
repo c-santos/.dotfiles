@@ -111,6 +111,18 @@ ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 On initial setup, `Ctrl+I` to install plugins. `Ctrl+b` to source the config file.
 After that tmux prefix is now set to `Ctrl+s`.
 
+## tmuxinator
+
+tmux session templater using yaml files.
+
+``` sh
+brew install tmuxinator
+```
+
+Add templates to `~/.config/tmuxinator/sample.yml`.
+
+Run template session with `[tmuxinator]/[mux] sample`.
+
 ## Neovim
 
 ```sh
