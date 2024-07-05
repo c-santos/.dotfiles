@@ -9,10 +9,6 @@ decorations = "Full"
 startup_mode = "Fullscreen"
 decorations_theme_variant = "Dark"
 
-[bell]
-animation = "Ease"
-duration = 1000
-
 [font]
 normal = { family = "FiraCode Nerd Font" }
 size = 16
