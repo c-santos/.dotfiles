@@ -1,5 +1,8 @@
+# import = [
+#     "~/.config/alacritty/kanagawa_dragon.toml"
+# ]
 import = [
-    "~/.config/alacritty/kanagawa_dragon.toml"
+    "~/.config/alacritty/catppuccin_mocha.toml"
 ]
 
 live_config_reload = true
@@ -9,7 +12,11 @@ decorations = "Full"
 startup_mode = "Windowed"
 decorations_theme_variant = "Dark"
 
+[env]
+TERM = "xterm-256color"
+
 [font]
+# normal = { family = "JetBrainsMono Nerd Font" }
 normal = { family = "FiraCode Nerd Font" }
 size = 18
 
