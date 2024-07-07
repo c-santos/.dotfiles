@@ -6,6 +6,7 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set linebreak")
 vim.cmd("set clipboard=unnamedplus")
 
+vim.opt.nu = true
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro' -- netrw line num
 vim.g.have_nerd_font = true
 vim.opt.cursorline = true
