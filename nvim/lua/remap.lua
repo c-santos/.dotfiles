@@ -20,7 +20,7 @@ noremap("n", "n", "nzzzv")
 noremap("n", "N", "Nzzzv")
 
 -- when pasting over a highlighted text, retains the yanked thing
-noremap("x", "<leader>p", "\"_dP")
+noremap("x", "<leader>p", "\"_dP<CR>")
 
 -- substitute all instances of word on cursor
 noremap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
