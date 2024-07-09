@@ -6,7 +6,7 @@ end
 vim.g.mapleader = " "
 
 -- netrw
-noremap("n", "<leader>pv", ":Ex<CR>")
+noremap("n", "<leader>pv", ":Ex<CR>", { silent = true })
 
 -- press esc after highlight no highlights 
 noremap('n', '<Esc>', ':noh<CR>', { silent = true })
