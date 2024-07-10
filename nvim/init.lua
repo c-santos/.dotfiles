@@ -17,4 +17,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup("plugins")
 
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("rose-pine")

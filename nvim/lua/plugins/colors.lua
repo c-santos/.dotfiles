@@ -1,27 +1,19 @@
 return {
-    {
-        "folke/tokyonight.nvim",
-        config = function()
-            require("tokyonight").setup({
-                transparent = true,
-                terminal_colors = true,
-                styles = {
-                    comments = { italic = false },
-                    keywords = { italic = false },
-                    sidebars = "transparent",
-                    floats = "transparent"
-                }
-            })
-        end,
-    },
-    {
-        "Mofiqul/vscode.nvim",
-        config = function ()
-            require("vscode").setup({
-                italic_comments = false,
-            })
-        end
-    },
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     config = function()
+    --         require("tokyonight").setup({
+    --             transparent = true,
+    --             terminal_colors = true,
+    --             styles = {
+    --                 comments = { italic = false },
+    --                 keywords = { italic = false },
+    --                 sidebars = "transparent",
+    --                 floats = "transparent"
+    --             }
+    --         })
+    --     end,
+    -- },
     {
         "rebelot/kanagawa.nvim",
         config = function ()
@@ -44,5 +36,9 @@ return {
                 term_colors = true
             })
         end
+    },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
     }
 }
