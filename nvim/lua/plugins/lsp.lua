@@ -37,10 +37,13 @@ return {
             nmap("K", vim.lsp.buf.hover, "Hover documentation.")
             nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
             nmap("<leader>f", vim.lsp.buf.format, "[F]ormat")
+            nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
             nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
             nmap("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
             nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
             nmap("gtd", vim.lsp.buf.type_definition, "[G]oto [T]ype [D]efinition")
+            nmap("<leader>ws", require("telescope.builtin").lsp_workspace_symbols, "[G]oto [W]orkspace [Symbols]")
+            nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[G]oto [D]ocument [Symbols]")
 
 
             -- Signature help

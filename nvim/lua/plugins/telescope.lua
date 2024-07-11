@@ -1,3 +1,14 @@
+local telescopeConfig = require("telescope.config")
+
+-- Clone the default Telescope configuration
+local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
+
+-- I want to search in hidden/dot files.
+table.insert(vimgrep_arguments, "--hidden")
+-- I don't want to search in the `.git` directory.
+table.insert(vimgrep_arguments, "--glob")
+table.insert(vimgrep_arguments, "!**/.git/*")
+
 return {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
@@ -6,22 +17,26 @@ return {
         local actions = require("telescope.actions")
         require("telescope").setup({
             defaults = {
+                vimgrep_arguments = vimgrep_arguments,
                 mappings = {
                     i = {
                         ["<esc>"] = actions.close
                     }
                 },
-                layout_strategy = 'horizontal',
+                layout_strategy = 'flex',
                 layout_config = {
-                    preview_width = 0.6,
-                    horizontal = {
-                        size = {
-                            width = "100%",
-                            height = "100%"
-                        }
+                    flex = {
+                        width = '100%',
+                        height = '100%',
                     }
                 }
-            }
+            },
+            pickers = {
+                find_files = {
+                    -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+                    find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+                },
+            },
         })
 
         local builtin = require("telescope.builtin")
@@ -52,5 +67,17 @@ return {
 
         -- Git status
         vim.keymap.set("n", "<leader>gg", builtin.git_status, {})
+
+        -- Git commits
+        vim.keymap.set("n", "<leader>gc", builtin.git_commits, {})
+
+        -- Git branches
+        vim.keymap.set("n", "<leader>gb", builtin.git_branches, {})
+
+        -- Git buffer commits
+        vim.keymap.set("n", "<leader>bc", builtin.git_bcommits, {})
+
+        -- List telescope builtin pickers
+        vim.keymap.set("n", "<leader>bi", builtin.builtin, {})
     end
 }
