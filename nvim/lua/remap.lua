@@ -19,8 +19,12 @@ noremap("v", "K", ":m '<-2<CR>gv=gv")
 noremap("n", "n", "nzzzv")
 noremap("n", "N", "Nzzzv")
 
+-- center cursor when moving page
+noremap("n", "<C-u>", "<C-u>zz")
+noremap("n", "<C-d>", "<C-d>zz")
+
 -- when pasting over a highlighted text, retains the yanked thing
-noremap("x", "<leader>p", "\"_dP<CR>")
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- substitute all instances of word on cursor
 noremap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
