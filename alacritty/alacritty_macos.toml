@@ -1,9 +1,9 @@
 # import = [
 #     "~/.config/alacritty/kanagawa_dragon.toml"
 # ]
-import = [
-    "~/.config/alacritty/catppuccin_mocha.toml"
-]
+# import = [
+#     "~/.config/alacritty/catppuccin_mocha.toml"
+# ]
 
 live_config_reload = true
 
