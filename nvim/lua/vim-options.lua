@@ -10,9 +10,10 @@ vim.opt.nu = true
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro' -- netrw line num
 vim.g.have_nerd_font = true
 vim.opt.cursorline = true
-vim.opt.showmode = true
+vim.opt.showmode = false
 vim.opt.incsearch = true
 vim.opt.smartcase = true
+vim.opt.ignorecase = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.autoindent = true
