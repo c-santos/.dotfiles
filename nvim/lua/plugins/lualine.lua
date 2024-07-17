@@ -26,18 +26,28 @@ return {
             custom_fname.super.init(self, options)
             self.status_colors = {
                 saved = highlight.create_component_highlight_group(
-                    { fg = default_status_colors.saved }, 'filename_status_saved', self.options),
+                    { fg = default_status_colors.saved },
+                    'filename_status_saved',
+                    self.options
+                ),
                 modified = highlight.create_component_highlight_group(
-                    { fg = default_status_colors.modified }, 'filename_status_modified', self.options),
+                    { fg = default_status_colors.modified },
+                    'filename_status_modified',
+                    self.options
+                ),
             }
-            if self.options.color == nil then self.options.color = '' end
+            if self.options.color == nil then
+                self.options.color = ''
+            end
         end
 
         function custom_fname:update_status()
             local data = custom_fname.super.update_status(self)
-            data = highlight.component_format_highlight(vim.bo.modified
-                and self.status_colors.modified
-                or self.status_colors.saved) .. data
+            data = highlight.component_format_highlight(
+                vim.bo.modified and
+                self.status_colors.modified or
+                self.status_colors.saved
+            ) .. data
             return data
         end
 
@@ -58,7 +68,7 @@ return {
                 },
                 lualine_c = {
                     {
-                       custom_fname
+                        custom_fname
                     },
                     {
                         'diff',
