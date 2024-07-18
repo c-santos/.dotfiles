@@ -1,4 +1,4 @@
-local color = { fg = '#6e6a86', bg = 'default' }
+local color = { fg = '8', bg = 'default' }
 
 local function diff_source()
     local gitsigns = vim.b.gitsigns_status_dict
