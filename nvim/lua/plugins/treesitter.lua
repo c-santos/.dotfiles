@@ -2,6 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+        event = {"BufReadPre", "BufNewFile"},
         config = function ()
             require 'nvim-treesitter.install'.prefer_git = false
             local config = require("nvim-treesitter.configs")
@@ -25,6 +26,7 @@ return {
                     "gitcommit",
                     "markdown",
                     "vimdoc",
+                    "bash"
                 },
                 sync_install = false,
                 auto_install = true,
