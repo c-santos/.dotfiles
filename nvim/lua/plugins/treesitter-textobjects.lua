@@ -47,27 +47,19 @@ return {
                     set_jumps = true,
                     goto_next_start = {
                         -- Go to start of next method
-                        [']m'] = "@function.outer",
+                        [']]'] = "@function.outer",
                     },
                     goto_previous_start = {
                         -- Go to start of previous method
-                        ['[m'] = "@function.outer",
+                        ['[['] = "@function.outer",
                     },
-                    goto_next_end = {
-                        -- Go to end of next method
-                        [']M'] = "@function.outer",
-                    },
-                    goto_previous_end = {
-                        -- Go to end of previous method
-                        ['[M'] = "@function.outer",
-                    }
                 },
                 lsp_interop = {
                     enable = true,
                     border = 'rounded',
                     floating_preview_opts = {},
                     peek_definition_code = {
-                        ["<C-K>"] = "@function.outer"
+                        ["gk"] = "@function.outer"
                     }
                 }
             }
