@@ -136,3 +136,14 @@ Load initial Neovim config to allow Lazy and Mason to install.
 
 - keybindings json
 - settings json
+
+
+## Fonts
+
+Here a list of fonts I like: 
+
+- Hack Nerd Font
+- FiraCode Nerd Font
+- JetBrains Nerd Font
+- GeistMono Nerd Font
+- SauceCodePro Nerd Font
