@@ -41,19 +41,19 @@ return {
         "rose-pine/neovim",
         name = "rose-pine",
     },
-    {
-        'olivercederborg/poimandres.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require('poimandres').setup {
-                -- leave this setup function empty for default config
-                -- or refer to the configuration section
-                -- for configuration options
-                bold_vert_split = false
-            }
-        end,
-    },
+    -- {
+    --     'olivercederborg/poimandres.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         require('poimandres').setup {
+    --             -- leave this setup function empty for default config
+    --             -- or refer to the configuration section
+    --             -- for configuration options
+    --             bold_vert_split = false
+    --         }
+    --     end,
+    -- },
     {
         'Mofiqul/vscode.nvim',
         config = function ()
