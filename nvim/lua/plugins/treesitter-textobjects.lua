@@ -39,6 +39,14 @@ return {
                             query = "@conditional.inner",
                             desc = "Select inside conditional"
                         },
+                        ["ic"] = {
+                            query = "@class.inner",
+                            desc = "Select inside class"
+                        },
+                        ["ac"] = {
+                            query = "@class.outer",
+                            desc = "Select outside class"
+                        },
                     }
 
                 },

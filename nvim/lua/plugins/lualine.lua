@@ -58,7 +58,7 @@ return {
                 section_separators = ''
             },
             sections = {
-                lualine_a = {},
+                lualine_a = { { 'mode', color = { fg = color.fg, bg = color.bg } } },
                 lualine_b = {
                     {
                         'b:gitsigns_head',
