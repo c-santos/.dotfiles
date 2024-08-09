@@ -65,9 +65,6 @@ return {
         -- Search buffers
         vim.keymap.set("n", "<leader>pb", builtin.buffers, {})
 
-        -- Git status
-        vim.keymap.set("n", "<leader>gg", builtin.git_status, {})
-
         -- Git commits
         vim.keymap.set("n", "<leader>gc", builtin.git_commits, {})
 
