@@ -70,6 +70,13 @@ alias dc="docker compose"
 alias gmp='git checkout master; git pull;'
 alias gdp='git checkout develop; git pull;'
 alias gm='git checkout master'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+
+create_commit() {
+    git commit -m "$1"
+}
+alias gc=create_commit
 
 PATH=~/.console-ninja/.bin:$PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
