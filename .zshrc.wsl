@@ -50,7 +50,7 @@ source $ZSH/oh-my-zsh.sh
 # dotfiles Quick Access
 alias dots="cd ~/.dotfiles"
 alias zshconf="nvim ~/.zshrc"
-alias nvconf="cd ~/.config/nvim"
+alias nvconf="nvim ~/.config/nvim"
 alias alaconf="nvim /mnt/c/Users/jcms1/AppData/Roaming/alacritty"
 alias tmuxconf="nvim ~/.tmux.conf"
 
@@ -59,19 +59,25 @@ alias refresh="source ~/.zshrc"
 
 # Directory Quick Access
 alias dev="cd ~/Dev"
-alias me="cd ~/Dev/me/"
-alias scratch="cd ~/Dev/scratch"
 
 # Neovim
 alias nv="nvim ."
 
 # Development Shortcuts
 alias dc="docker compose"
+
+# Git aliases
 alias gmp='git checkout master; git pull;'
 alias gdp='git checkout develop; git pull;'
 alias gm='git checkout master'
+alias gs='git status'
 alias gco='git checkout'
 alias gcb='git checkout -b'
+
+open-git-remote() {
+    git remote -v | cut -w -f2 | fzf-tmux -p | xargs open
+}
+alias remote=open-git-remote
 
 create_commit() {
     git commit -m "$1"
