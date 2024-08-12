@@ -64,12 +64,24 @@ alias nv="nvim ."
 
 # Development Shortcuts
 alias dc="docker compose"
+
+# Git aliases
 alias gmp='git checkout master; git pull;'
 alias gdp='git checkout develop; git pull;'
 alias gm='git checkout master'
 alias gs='git status'
-alias gc='git checkout'
+alias gco='git checkout'
 alias gcb='git checkout -b'
+
+open-git-remote() {
+    git remote -v | cut -w -f2 | fzf-tmux -p | xargs open
+}
+alias remote=open-git-remote
+
+create-commit() {
+    git commit -m "$1"
+}
+alias gc=create-commit
 
 PATH=~/.console-ninja/.bin:$PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
