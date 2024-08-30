@@ -20,7 +20,8 @@ TERM = "xterm-256color"
 # normal = { family = "FiraCode Nerd Font", style = "Retina"}
 # normal = { family = "GeistMono Nerd Font" }
 # normal = { family = "CommitMono Nerd Font" }
-normal = { family = "MesloLGSDZ Nerd Font" }
+normal = { family = "Hack Nerd Font" }
+# normal = { family = "MesloLGSDZ Nerd Font" }
 # normal = { family = "SauceCodePro Nerd Font" }
 size = 15
 

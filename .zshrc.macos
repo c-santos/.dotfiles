@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 # Config Quick Access
 alias dots="cd ~/.dotfiles"
 alias zshconf="nvim ~/.zshrc"
-alias nvconf="nvim ~/.config/nvim"
+alias nvconf="cd ~/.config/nvim; nvim ."
 alias alaconf="nvim ~/.config/alacritty"
 alias tmuxconf="nvim ~/.tmux.conf"
 
