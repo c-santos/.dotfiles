@@ -73,6 +73,7 @@ alias gs='git status'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias grn='git branch -m'
+alias branches='git log --all --decorate --oneline --graph'
 
 open-git-remote() {
     git remote -v | cut -w -f2 | fzf-tmux -p | xargs open
