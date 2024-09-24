@@ -73,7 +73,8 @@ alias gs='git status'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias grn='git branch -m'
-alias branches='git log --all --decorate --oneline --graph'
+alias gt='git log --all --decorate --oneline --graph'
+alias gb='git branch -a -vv'
 
 open-git-remote() {
     git remote -v | cut -w -f2 | fzf-tmux -p | xargs open
@@ -89,7 +90,7 @@ PATH=~/.console-ninja/.bin:$PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
 PATH=$PATH:$ANDROID_HOME/emulator
 PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 alias mysql=/opt/homebrew/bin/mysql
 
 # Fuzzy Find Aliases
