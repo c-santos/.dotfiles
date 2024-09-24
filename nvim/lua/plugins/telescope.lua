@@ -25,10 +25,16 @@ return {
                 },
                 layout_strategy = 'flex',
                 layout_config = {
-                    flex = {
-                        width = '100%',
-                        height = '100%',
-                    }
+                    horizontal = {
+                        width = 0.9,
+                        height = 0.9,
+                        prompt_position = 'bottom'
+                    },
+                    vertical = {
+                        width = 0.9,
+                        height = 0.9,
+                        prompt_position = 'bottom'
+                    },
                 }
             },
             pickers = {
@@ -40,9 +46,6 @@ return {
         })
 
         local builtin = require("telescope.builtin")
-
-        -- Search git files
-        vim.keymap.set("n", "<C-p>", builtin.git_files, {})
 
         -- Search all project files
         vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
@@ -71,7 +74,7 @@ return {
         -- Git branches
         vim.keymap.set("n", "<leader>gb", builtin.git_branches, {})
 
-        -- Git buffer commits
+        -- Git commits of current buffer
         vim.keymap.set("n", "<leader>bc", builtin.git_bcommits, {})
 
         -- List telescope builtin pickers
