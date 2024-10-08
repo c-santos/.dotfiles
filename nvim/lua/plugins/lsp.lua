@@ -1,4 +1,4 @@
-local language_servers = { "lua_ls", "tsserver", "jsonls", "cssls" }
+local language_servers = { "lua_ls", "ts_ls", "jsonls", "cssls" }
 
 return {
     "neovim/nvim-lspconfig",
