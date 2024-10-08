@@ -38,6 +38,16 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
+        config = function ()
+            require('rose-pine').setup({
+                variant = "moon",
+                styles = {
+                    transparency = true,
+                    italic = true,
+                    bold = true
+                }
+            })
+        end
     },
     {
         'Mofiqul/vscode.nvim',
