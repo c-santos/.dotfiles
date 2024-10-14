@@ -52,6 +52,7 @@ alias zshconf="nvim ~/.zshrc"
 alias nvconf="cd ~/.config/nvim; nvim ."
 alias alaconf="nvim ~/.config/alacritty"
 alias tmuxconf="nvim ~/.tmux.conf"
+alias wezconf="cd ~/.config/wezterm; nvim ."
 
 # Zsh Quick Refresh
 alias refresh="source ~/.zshrc"
@@ -75,6 +76,17 @@ alias gcb='git checkout -b'
 alias grn='git branch -m'
 alias gt='git log --all --decorate --oneline --graph'
 alias gb='git branch -a -vv'
+alias gsl='git stash list'
+
+stash-curr() {
+    git stash save $1
+}
+alias gss=stash-curr
+
+apply-stash() {
+    git stash apply $1
+}
+alias gsa=apply-stash
 
 open-git-remote() {
     git remote -v | cut -w -f2 | fzf-tmux -p | xargs open
