@@ -12,15 +12,15 @@ decorations = "Buttonless"
 startup_mode = "Windowed"
 decorations_theme_variant = "Dark"
 padding = { x = 2, y = 2 }
-opacity = 0.9
-blur = true
+# opacity = 0.9
+# blur = true
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font" }
 # normal = { family = "FiraCode Nerd Font", style = "Retina"}
 # normal = { family = "GeistMono Nerd Font" }
 # normal = { family = "CommitMono Nerd Font" }
-# normal = { family = "Hack Nerd Font Propo" }
+# normal = { family = "Hack Nerd Font" }
 # normal = { family = "MesloLGSDZ Nerd Font" }
 # # normal = { family = "SauceCodePro Nerd Font" }
 size = 14
