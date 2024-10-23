@@ -1,45 +1,49 @@
-local noremap = function (mode, keys, cmd, opts)
-   vim.keymap.set(mode, keys, cmd, opts)
+local remap = function(mode, keys, cmd, opts)
+	vim.keymap.set(mode, keys, cmd, opts)
 end
 
 -- map leader
 vim.g.mapleader = " "
 
--- netrw
-noremap("n", "<leader>pv", ":Ex<CR>", { silent = true })
+-- vanquish cut char to the x register
+remap("n", "x", '"_x')
 
--- press esc after highlight no highlights 
-noremap('n', '<Esc>', ':noh<CR>', { silent = true })
+-- open default file explorer
+remap("n", "<leader>pv", ":Ex<CR>", { silent = true })
 
--- move highlighted with cursor
-noremap("v", "J", ":m '>+1<CR>gv=gv")
-noremap("v", "K", ":m '<-2<CR>gv=gv")
+-- press esc after highlight no highlights
+remap("n", "<Esc>", ":noh<CR>", { silent = true })
+
+-- move highlighted selection with cursor
+remap("v", "J", ":m '>+1<CR>gv=gv")
+remap("v", "K", ":m '<-2<CR>gv=gv")
 
 -- center cursor when nexting search
-noremap("n", "n", "nzzzv")
-noremap("n", "N", "Nzzzv")
+remap("n", "n", "nzzzv")
+remap("n", "N", "Nzzzv")
 
 -- center cursor when moving page
-noremap("n", "<C-u>", "<C-u>zz")
-noremap("n", "<C-d>", "<C-d>zz")
+remap("n", "<C-u>", "<C-u>zz")
+remap("n", "<C-d>", "<C-d>zz")
 
 -- when pasting over a highlighted text, retains the yanked thing
-vim.keymap.set("x", "<leader>p", [["_dP]])
+remap("x", "<leader>p", [["_dP]])
 
--- substitute all instances of word on cursor
-noremap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- substitute all instances in buffer of word that the cursor is on
+remap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- exit insert mode with 'jk'
-noremap('i', 'jk', '<Esc>', { noremap = true, silent = true })
+remap("i", "jk", "<Esc>", { noremap = true, silent = true })
 
--- tab movement
-noremap('n', '<C-J>', '<C-W>w')
-noremap('n', '<C-K>', '<C-W>w')
-noremap('n', '<C-t>', ':vsplit<CR>')
+-- create split
+remap("n", "<C-t>", ":vsplit<CR>")
 
--- tmux pane
-noremap('n', '<c-k>', ':wincmd k<CR>')
-noremap('n', '<c-j>', ':wincmd j<CR>')
-noremap('n', '<c-h>', ':wincmd h<CR>')
-noremap('n', '<c-l>', ':wincmd l<CR>')
+-- move between splits
+remap("n", "<C-J>", "<C-W>w")
+remap("n", "<C-K>", "<C-W>w")
 
+-- tmux pane movement
+remap("n", "<c-k>", ":wincmd k<CR>")
+remap("n", "<c-j>", ":wincmd j<CR>")
+remap("n", "<c-h>", ":wincmd h<CR>")
+remap("n", "<c-l>", ":wincmd l<CR>")
