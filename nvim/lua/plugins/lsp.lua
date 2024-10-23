@@ -153,10 +153,9 @@ return {
         -- Diagnostics
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-        vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+        vim.keymap.set("n", "<S-d>", vim.diagnostic.open_float)
         vim.diagnostic.config({
-            virtual_text = false,
-            virtual_lines = true,
+            virtual_text = true,
             float = {
                 focusable = false,
                 style = "minimal",
