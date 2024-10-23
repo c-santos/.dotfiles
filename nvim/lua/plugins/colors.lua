@@ -20,7 +20,7 @@ return {
             require("kanagawa").setup({
                 commentStyle = { bold = false, italic = false },
                 statementStyle = { bold = false, italic = false },
-                functionStyle = { bold = false, italic = true },
+                functionStyle = { bold = false, italic = false },
                 keywordStyle = { bold = false, italic = false },
                 typeStyle = { bold = false, italic = false },
                 terminalColors = true,
