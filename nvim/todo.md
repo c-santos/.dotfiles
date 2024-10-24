@@ -1,8 +1,8 @@
-Add:
-
+# Add:
+- [ ] docker lsp
 
 ---
-Done:
+# Done:
 
 1. 'jk' keymap to go to normal mode from insert mode. 
 2. go to implementations
