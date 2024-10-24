@@ -45,7 +45,7 @@ return {
                 enable = true,
                 line_numbers = true,
             })
-            vim.cmd("hi TreesitterContextLineNumberBottom gui=underline guisp=Grey")
+            vim.cmd("hi TreesitterContextLineNumberBottom guisp=Grey")
             vim.cmd("hi TreesitterContextBottom guisp=Grey")
         end
     }

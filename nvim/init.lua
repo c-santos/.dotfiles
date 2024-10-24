@@ -17,4 +17,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup("plugins")
 
-vim.cmd.colorscheme("kanagawa-dragon")
+Color('kanagawa-dragon')
