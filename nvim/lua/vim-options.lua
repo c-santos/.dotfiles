@@ -21,7 +21,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.g.have_nerd_font = true
 -- vim.opt.guicursor = "" -- block cursor on insert mode
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 -- buffer behavior settings
 
