@@ -79,5 +79,8 @@ return {
 
         -- List telescope builtin pickers
         vim.keymap.set("n", "<leader>bi", builtin.builtin, {})
+
+        -- Find in current buffer
+        vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find, {})
     end
 }

@@ -20,7 +20,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.g.have_nerd_font = true
-vim.o.guicursor = "" -- block cursor on insert mode
+-- vim.opt.guicursor = "" -- block cursor on insert mode
 vim.opt.colorcolumn = "80"
 
 -- buffer behavior settings
@@ -33,7 +33,7 @@ vim.opt.shiftwidth = 4
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.clipboard = "unnamedplus"
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
