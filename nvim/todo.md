@@ -1,5 +1,8 @@
 # Add:
 - [ ] docker lsp
+- [ ] make a jumper plugin for when you return back to where you came from after a `gd`. Make it quick and toggleable like harpoon.
+- [ ] tmux: style the window when sessionzing
+- [ ] look for warmer counterpart of nordic and add a switch for both nvim and tmux
 
 ---
 # Done:
