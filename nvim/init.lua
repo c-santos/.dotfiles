@@ -17,4 +17,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup("plugins")
 
-Color('kanagawa-dragon')
+-- Color('kanagawa-dragon')
+Color('nordic')

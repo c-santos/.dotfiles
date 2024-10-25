@@ -1,14 +1,17 @@
 Color = function(color)
 	color = color or "rose-pine-moon"
 	vim.cmd.colorscheme(color)
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalDark", { bg = "none" })
+
+	-- background
+	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "NormalDark", { bg = "none" })
 end
 
 return {
 	{
 		"folke/tokyonight.nvim",
+		lazy = true,
 		config = function()
 			require("tokyonight").setup({
 				transparent = true,
@@ -81,7 +84,7 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppucin",
-		priority = 1000,
+		lazy = true,
 		config = function()
 			require("catppuccin").setup({
 				transparent_background = true,
@@ -99,6 +102,88 @@ return {
 					transparency = true,
 					italic = false,
 					bold = true,
+				},
+			})
+		end,
+	},
+	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = true,
+		config = function()
+			require("gruvbox").setup({
+				terminal_colors = true, -- add neovim terminal colors
+				undercurl = false,
+				underline = false,
+				bold = true,
+				italic = {
+					strings = false,
+					emphasis = false,
+					comments = false,
+					operators = false,
+					folds = false,
+				},
+				strikethrough = true,
+				invert_selection = false,
+				invert_signs = true,
+				invert_tabline = false,
+				invert_intend_guides = false,
+				inverse = true, -- invert background for search, diffs, statuslines and errors
+				contrast = "soft", -- can be "hard", "soft" or empty string
+				palette_overrides = {},
+				overrides = {},
+				dim_inactive = false,
+				transparent_mode = true,
+			})
+		end,
+	},
+	{
+		"AlexvZyl/nordic.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("nordic").setup({
+				bold_keywords = true,
+				-- Enable italic comments.
+				italic_comments = false,
+				-- Enable editor background transparency.
+				transparent = {
+					-- Enable transparent background.
+					bg = false,
+					-- Enable transparent background for floating windows.
+					float = false,
+				},
+				-- Enable brighter float border.
+				bright_border = false,
+				-- Reduce the overall amount of blue in the theme (diverges from base Nord).
+				reduced_blue = true,
+				-- Swap the dark background with the normal one.
+				swap_backgrounds = false,
+				-- Cursorline options.  Also includes visual/selection.
+				cursorline = {
+					-- Bold font in cursorline.
+					bold = false,
+					-- Bold cursorline number.
+					bold_number = true,
+					-- Available styles: 'dark', 'light'.
+					theme = "dark",
+					-- Blending the cursorline bg with the buffer bg.
+					blend = 0.8,
+				},
+				noice = {
+					-- Available styles: `classic`, `flat`.
+					style = "classic",
+				},
+				telescope = {
+					-- Available styles: `classic`, `flat`.
+					style = "flat",
+				},
+				leap = {
+					-- Dims the backdrop when using leap.
+					dim_backdrop = false,
+				},
+				ts_context = {
+					-- Enables dark background for treesitter-context window
+					dark_background = true,
 				},
 			})
 		end,
