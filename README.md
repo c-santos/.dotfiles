@@ -58,6 +58,12 @@ brew install fd
 sudo apt install fd-find
 ```
 
+#### zoxide
+
+```sh
+brew install zoxide
+```
+
 ### Create symlink
 
 For MacOS,

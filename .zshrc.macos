@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="simple" # set by `omz`
+ZSH_THEME="robbyrussell" # set by `omz`
 
 CASE_SENSITIVE=false
 # Uncomment the following line if pasting URLs and other text is messed up.
@@ -126,3 +126,4 @@ alias fp=find_project
 alias mux=tmuxinator
 alias muxconf="cd ~/.config/tmuxinator"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(zoxide init --cmd cd zsh)"
