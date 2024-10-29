@@ -6,4 +6,4 @@ end
 -- JS/TS
 
 -- Quick log
-remap("n", "<leader>ll", "oconsole.log(Thing, '');<Esc>3b")
+remap("n", "<leader>ll", "oconsole.log('thing', thing);<Esc>3b")
