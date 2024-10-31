@@ -18,5 +18,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup("plugins")
 
+-- Color('Tokyonight-night')
+-- Color('rose-pine-moon')
+-- Color('vscode')
+-- Color('catppuccin')
 -- Color('kanagawa-dragon')
-Color('nordic')
+-- Color('nordic')
+-- Color('gruvbox')
+Color('carbonfox')
