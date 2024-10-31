@@ -23,8 +23,8 @@ config.colors = require("nordic")
 -- config.colors = require("kanagawa-dragon")
 
 -- config.color_scheme = "Nord (Gogh)"
---
---
+-- config.color_scheme = "Catppuccin Mocha"
+
 require("os-specific").setup(config)
 
 return config
