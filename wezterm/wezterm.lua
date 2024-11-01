@@ -1,30 +1,23 @@
 local wz = require("wezterm")
 
-local config = {}
+local config = wz.config_builder()
 
-if wz.config_builder() then
-	config = wz.config_builder()
+GetOS = function()
+    if
+        wz.target_triple:find("linux") ~= nil
+        or wz.target_triple:find("apple") ~= nil
+    then
+        return "unix"
+    elseif wz.target_triple:find("windows") then
+        return "windows"
+    end
 end
 
--- General
 config.automatically_reload_config = true
-
--- UI
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 
-config.line_height = 1.0
-config.font_size = 14
-config.adjust_window_size_when_changing_font_size = false
-
--- Color schemes
-
-config.colors = require("nordic")
--- config.colors = require("kanagawa-dragon")
-
--- config.color_scheme = "Nord (Gogh)"
--- config.color_scheme = "Catppuccin Mocha"
-
-require("os-specific").setup(config)
+require("fonts").setup(config)
+require("colors").setup(config)
 
 return config

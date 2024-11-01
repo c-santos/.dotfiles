@@ -1,10 +1,15 @@
 local wz = require("wezterm")
+local M = {}
 
 ---@param config table
-local setup = function(config)
+M.setup = function(config)
+    -- Global options
+    config.line_height = 1.0
+    config.font_size = 14
+    config.adjust_window_size_when_changing_font_size = false
+
     local current_os = GetOS()
     if current_os == "unix" then
-        -- Fonts
         config.font = wz.font_with_fallback({
             { family = "BlexMono Nerd Font Mono", weight = 400 },
             { family = "CodeNewRoman Nerd Font Mono", weight = 400 },
@@ -33,4 +38,4 @@ local setup = function(config)
     end
 end
 
-return setup
+return M
