@@ -26,7 +26,8 @@ return {
                     "gitcommit",
                     "markdown",
                     "vimdoc",
-                    "bash"
+                    "bash",
+                    "http"
                 },
                 sync_install = false,
                 auto_install = true,
