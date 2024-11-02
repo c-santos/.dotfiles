@@ -52,7 +52,7 @@ alias dots="cd ~/.dotfiles"
 alias zshconf="cd ~; nvim ~/.zshrc"
 alias nvconf="cd ~/.config/nvim; nvim ."
 alias alaconf="cd /mnt/c/Users/jcms1/AppData/Roaming/alacritty; nvim ."
-alias tmuxconf="cd ~/.tmux.conf; nvim ."
+alias tmuxconf="nvim ~/.tmux.conf"
 alias wezconf="cd /mnt/c/Users/jcms1/.config/wezterm; nvim ."
 
 # Zsh Quick Refresh
