@@ -1,0 +1,1 @@
+- add convenience script for copying wezterm dir to appropriate windows dir
