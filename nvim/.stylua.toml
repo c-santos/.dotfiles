@@ -1,3 +1,2 @@
 indent_type = "Spaces"
 column_width = 80
-space_after_function_names = "Always"
