@@ -1,4 +1,12 @@
-local language_servers = { "lua_ls", "ts_ls", "jsonls", "cssls", "docker_compose_language_service", "dockerls" }
+local language_servers = {
+    "lua_ls",
+    "ts_ls",
+    "jsonls",
+    "cssls",
+    "docker_compose_language_service",
+    "dockerls",
+    "sqlls",
+}
 
 return {
     "neovim/nvim-lspconfig",
