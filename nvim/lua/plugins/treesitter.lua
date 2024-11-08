@@ -45,8 +45,9 @@ return {
             require("treesitter-context").setup({
                 enable = true,
                 line_numbers = true,
-                min_window_height = 50,
-                trim_scope = 'outer'
+                multiline_threshold = 2,
+                max_lines = 2,
+                trim_scope = 'inner'
             })
             vim.cmd("hi TreesitterContextLineNumberBottom guisp=Grey")
             vim.cmd("hi TreesitterContextBottom guisp=Grey")
