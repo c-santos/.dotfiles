@@ -58,6 +58,9 @@ return {
             -- Search all project files
             vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
 
+            -- Search all Git-tracked files
+            vim.keymap.set("n", "<leader>pp", builtin.git_files, {})
+
             -- Search string
             vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
 
