@@ -125,5 +125,6 @@ alias fp=find_project
 
 alias mux=tmuxinator
 alias muxconf="cd ~/.config/tmuxinator"
+alias air="~/go/bin/air"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(zoxide init --cmd cd zsh)"
