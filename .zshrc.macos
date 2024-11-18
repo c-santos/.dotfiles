@@ -60,6 +60,7 @@ alias refresh="source ~/.zshrc"
 # Directory Quick Access
 alias dev="cd ~/Dev"
 alias me="cd ~/Personal"
+alias notes="cd ~/notes"
 
 # Neovim
 alias nv="nvim ."
