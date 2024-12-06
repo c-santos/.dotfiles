@@ -80,6 +80,14 @@ alias gt='git log --all --decorate --oneline --graph'
 alias gb='git branch -a -vv'
 alias gsl='git stash list'
 
+checkout_advanced() {
+    if [[ -n $1 ]] then
+        git checkout $1
+    fi
+    git branch | fzf-tmux -p | xargs git checkout
+}
+alias gco=checkout_advanced
+
 stash-curr() {
     git stash save $1
 }
@@ -123,6 +131,15 @@ find_project() {
 alias f='fd --hidden --exclude .git| fzf-tmux -p | xargs nvim'
 
 alias fp=find_project
+
+# ULOS v2 DB Migration Aliases
+generate_migration() {
+    docker compose run --rm backend npm run typeorm:migration:generate --name=$1
+}
+alias dbg=generate_migration
+
+alias dbm="docker compose run --rm backend npm run typeorm:migration:run"
+alias dbs="docker compose run --rm backend npm run typeorm:migration:seed"
 
 alias mux=tmuxinator
 alias muxconf="cd ~/.config/tmuxinator"
