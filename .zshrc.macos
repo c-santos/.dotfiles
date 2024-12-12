@@ -83,6 +83,7 @@ alias gsl='git stash list'
 checkout_advanced() {
     if [[ -n $1 ]] then
         git checkout $1
+        return
     fi
     git branch | fzf-tmux -p | xargs git checkout
 }
@@ -107,6 +108,11 @@ create-commit() {
     git commit -m "$1"
 }
 alias gc=create-commit
+
+reset-soft-commit() {
+    git reset --soft HEAD~$1
+}
+alias grs=reset-soft-commit
 
 PATH=~/.console-ninja/.bin:$PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
