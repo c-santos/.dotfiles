@@ -11,10 +11,10 @@ M.setup = function(config)
     local current_os = GetOS()
     if current_os == "unix" then
         config.font = wz.font_with_fallback({
+            { family = "FiraCode Nerd Font", weight = 400 },
             { family = "Hack Nerd Font", weight = 400 },
             { family = "BlexMono Nerd Font Mono", weight = 400 },
             { family = "CodeNewRoman Nerd Font Mono", weight = 400 },
-            { family = "FiraCode Nerd Font", weight = 400 },
             { family = "BigBlueTerm437 Nerd Font Mono", weight = 400 },
             -- Unused
             { family = "UbuntuSansMono Nerd Font Mono", weight = 400 },
