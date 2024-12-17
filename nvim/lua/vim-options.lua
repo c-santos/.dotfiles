@@ -5,9 +5,9 @@ vim.opt.updatetime = 100
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
 vim.opt.undofile = true
-vim.opt.wildignore:append({"*/node_modules/*"})
+vim.opt.wildignore:append({ "*/node_modules/*" })
 
 -- buffer ui settings
 vim.opt.title = true
@@ -52,4 +52,3 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro" -- netrw line num
-
