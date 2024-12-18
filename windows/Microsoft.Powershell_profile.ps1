@@ -1,8 +1,3 @@
-oh-my-posh init pwsh | Invoke-Expression
-
-oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/robbyrussell.omp.json' | Invoke-Expression
-
-
 function GoToDev
 {
     Set-Location "E:\Files\dev"
@@ -111,3 +106,5 @@ Set-Alias gsl GitStashList
 Set-Alias gss GitStashSave
 Set-Alias gsa GitStashApply
 Set-Alias gbd GitDeleteBranch
+
+Invoke-Expression (&starship init powershell)

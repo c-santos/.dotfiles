@@ -2,6 +2,7 @@ $PWSH_FILENAME="Microsoft.Powershell_Profile_Custom.ps1"
 $DOTFILES_LOCATION="E:\Files\dev\.dotfiles"
 
 # install neovim dependencies
+winget install starship
 winget install BurntSushi.ripgrep.MSVC
 winget install junegunn.fzf
 
