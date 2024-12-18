@@ -90,6 +90,11 @@ function GitBranchDelete
     Invoke-Expression "git branch -D $args"
 }
 
+function GitOpenRemote
+{
+    git remote -v | ForEach-Object { ($_ -split '\s+')[1] } | Sort-Object -Unique | fzf | ForEach-Object { Start-Process "chrome" $_ }
+}
+
 Set-Alias dev GoToDev
 Set-Alias docs GoToDocs
 Set-Alias shconf GoToPwshConfig
@@ -106,5 +111,6 @@ Set-Alias gsl GitStashList
 Set-Alias gss GitStashSave
 Set-Alias gsa GitStashApply
 Set-Alias gbd GitDeleteBranch
+Set-Alias remote GitOpenRemote
 
 Invoke-Expression (&starship init powershell)
