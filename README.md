@@ -4,22 +4,28 @@ repo for Dotfiles
 
 ## Todo
 
-- [ ] Install scripts.
-- [ ] Find fix to be able to symlink Alacritty config for Windows machine.
+- [ ] Better install scripts.
 
-**Important note on Alacritty on Windows/WSL**
+## Windows Setup
 
-Creating a symlink from WSL to the `AppData/Roaming` directory causes issues
-with permissions (probably) and Alacritty is not able to load the config.
-So you have to manually copy and paste the `alacritty_wsl.toml` and `kanagawa_dragon.toml` files to Windows' config directory for Alacritty.
+Double check file locations in the `setup.ps1` file and run it to setup a Windows Terminal.
 
-Sadly, this makes it to not be tracked by Git and requires manual updating :(
-
+```sh
+. /setup.ps1
+```
 
 ## Creating a symlink
 
+MacOS/Linux
+
 ``` sh
 ln -s ~/path/to/original ~/path/to/destination
+```
+
+Windows
+
+``` sh
+New-Item -ItemType SymbolicLink -Path "E:\Files\Documents\WindowsPowershell\Microsoft.Powershell_profile.ps1" -Target "E:\Files\dev\.dotfiles\windows\Microsoft.Powershell_profile.ps1"
 ```
 
 ## zsh
@@ -102,13 +108,7 @@ ln -s ~/.dotfiles/alacritty/alacritty_wsl.toml /mnt/c/Users/{username}/AppData/R
 ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml /mnt/c/Users/{username}/AppData/Roaming/alacritty/kanagawa_dragon.toml
 ```
 
-- FiraCode Nerd Font
-- Kanagawa Dragon Theme
-
 ## tmux
-
-- tmp
-- kanagawa-tmux
 
 ```sh
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
@@ -142,7 +142,7 @@ Load initial Neovim config to allow Lazy and Mason to install.
 
 - keybindings json
 - settings json
-
+These are synced through my GitHub profile.
 
 ## Fonts
 
