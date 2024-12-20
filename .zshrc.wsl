@@ -62,7 +62,14 @@ alias refresh="source ~/.zshrc"
 alias dev="cd ~/Dev"
 
 # Neovim
-alias nv="nvim ."
+alias v="nvim ."
+open_neovim() {
+   if [[ -n $1 ]]; then
+       nvim .
+   else
+       nvim $1
+   fi
+}
 
 # Development Shortcuts
 alias dc="docker compose"
