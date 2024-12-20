@@ -99,7 +99,7 @@ apply-stash() {
 alias gsa=apply-stash
 
 open-git-remote() {
-    git remote -v | cut -w -f2 | fzf-tmux -p | xargs open
+    git remote -v | cut -f2 | cut -d " " -f1 | fzf-tmux -p | xargs explorer.exe
 }
 alias remote=open-git-remote
 
