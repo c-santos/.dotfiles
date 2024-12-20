@@ -63,7 +63,7 @@ alias me="cd ~/Personal"
 alias notes="cd ~/notes"
 
 # Neovim
-alias nv="nvim ."
+alias v="nvim ."
 
 # Development Shortcuts
 alias dc="docker compose"
