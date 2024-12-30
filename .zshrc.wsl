@@ -108,6 +108,11 @@ create_commit() {
 }
 alias gc=create_commit
 
+reset-soft-commit() {
+    git reset --soft HEAD~$1
+}
+
+alias grs=reset-soft-commit
 PATH=~/.console-ninja/.bin:$PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
 PATH=$PATH:$ANDROID_HOME/emulator
