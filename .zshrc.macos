@@ -53,6 +53,7 @@ alias nvconf="cd ~/.config/nvim; nvim ."
 alias alaconf="nvim ~/.config/alacritty"
 alias tmuxconf="nvim ~/.tmux.conf"
 alias wezconf="cd ~/.config/wezterm; nvim ."
+alias ghostconf="nvim ~/.config/ghostty/config"
 
 # Zsh Quick Refresh
 alias refresh="source ~/.zshrc"
@@ -119,6 +120,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 PATH=$PATH:$ANDROID_HOME/emulator
 PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 alias mysql=/opt/homebrew/bin/mysql
 
 # Fuzzy Find Aliases
@@ -151,4 +153,5 @@ alias mux=tmuxinator
 alias muxconf="cd ~/.config/tmuxinator"
 alias air="~/go/bin/air"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(zoxide init --cmd cd zsh)"
