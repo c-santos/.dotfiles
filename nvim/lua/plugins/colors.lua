@@ -248,4 +248,13 @@ return {
             })
         end,
     },
+    {
+        "cpwrs/americano.nvim",
+        priority = 1000,
+        config = function()
+            require("americano").setup({
+                terminal = true,
+            })
+        end,
+    },
 }
