@@ -11,7 +11,6 @@ end
 return {
     {
         "folke/tokyonight.nvim",
-        lazy = true,
         config = function()
             require("tokyonight").setup({
                 transparent = true,
@@ -27,7 +26,6 @@ return {
     },
     {
         "rebelot/kanagawa.nvim",
-        lazy = true,
         config = function()
             require("kanagawa").setup({
                 commentStyle = { bold = false, italic = false },
@@ -94,7 +92,6 @@ return {
     {
         "catppuccin/nvim",
         name = "catppucin",
-        priority = 1000,
         config = function()
             require("catppuccin").setup({
                 transparent_background = true,
@@ -105,7 +102,6 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
-        lazy = true,
         config = function()
             require("rose-pine").setup({
                 terminal_colors = true,
@@ -118,39 +114,7 @@ return {
         end,
     },
     {
-        "ellisonleao/gruvbox.nvim",
-        lazy = true,
-        config = function()
-            require("gruvbox").setup({
-                terminal_colors = true, -- add neovim terminal colors
-                undercurl = false,
-                underline = false,
-                bold = true,
-                italic = {
-                    strings = false,
-                    emphasis = false,
-                    comments = false,
-                    operators = false,
-                    folds = false,
-                },
-                strikethrough = true,
-                invert_selection = false,
-                invert_signs = true,
-                invert_tabline = false,
-                invert_intend_guides = false,
-                inverse = true, -- invert background for search, diffs, statuslines and errors
-                contrast = "", -- can be "hard", "soft" or empty string
-                palette_overrides = {},
-                overrides = {},
-                dim_inactive = false,
-                transparent_mode = false,
-            })
-        end,
-    },
-    {
         "AlexvZyl/nordic.nvim",
-        lazy = false,
-        priority = 1000,
         config = function()
             require("nordic").setup({
                 bold_keywords = true,
@@ -201,7 +165,6 @@ return {
     },
     {
         "Mofiqul/vscode.nvim",
-        lazy = true,
         config = function()
             require("vscode").setup({
                 -- Alternatively set style in setup
@@ -239,7 +202,6 @@ return {
     },
     {
         "EdenEast/nightfox.nvim",
-        lazy = true,
         config = function()
             require("nightfox").setup({
                 options = {
@@ -250,11 +212,26 @@ return {
     },
     {
         "cpwrs/americano.nvim",
-        priority = 1000,
         config = function()
             require("americano").setup({
                 terminal = true,
             })
         end,
+    },
+    {
+        "sainnhe/gruvbox-material",
+        config = function()
+            vim.g.gruvbox_material_enable_italic = true
+            vim.g.gruvbox_material_background = "hard"
+        end
+    },
+    {
+        "navarasu/onedark.nvim",
+        config = function()
+            require('onedark').setup({
+                termcolors = true,
+                style = "darker"
+            })
+        end
     },
 }
