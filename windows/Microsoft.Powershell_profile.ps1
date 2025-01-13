@@ -8,6 +8,10 @@ function GoToPwshConfig
     Set-Location "E:\Files\Documents\WindowsPowershell"
 }
 
+function GoToConfigDir {
+    Set-Location "$HOME\.config"
+}
+
 function GoToDocs
 {
     Set-Location "E:\Files\Documents"
@@ -99,6 +103,7 @@ Set-Alias dev GoToDev
 Set-Alias docs GoToDocs
 Set-Alias shconf GoToPwshConfig
 Set-Alias nvconf GoToNeovimConfig
+Set-Alias conf GoToConfigDir
 Set-Alias v OpenNeovim
 Set-Alias refresh SourcePowerShellProfile
 Set-Alias gs GitStatus
