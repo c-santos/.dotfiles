@@ -24,12 +24,9 @@ local randomize_colors = function ()
     "vscode",
     "catppuccin",
     "kanagawa-dragon",
-    "kanagawa-dragon",
     "nordic",
     "duskfox",
-    "americano",
     "gruvbox-material",
-    "onedark"
   }
   local chosen = choices[math.random(#choices)]
   print("Loaded theme: ", chosen)
