@@ -21,6 +21,7 @@ brew install fd;
 brew install unzip;
 brew install ripgrep; #nvim: for telescope
 ```
+5. Install NVM manually
 
 ## Windows Setup
 
