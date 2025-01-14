@@ -142,12 +142,17 @@ alias fp=find_project
 
 # ULOS v2 DB Migration Aliases
 generate_migration() {
-    docker compose run --rm backend npm run typeorm:migration:generate --name=$1
+    if [[ -n $1 ]]; then
+        docker compose run --rm backend npm run typeorm:migration:generate --name=$1
+    else
+        echo "provide migration name"
+    fi
 }
 alias dbg=generate_migration
 
 alias dbm="docker compose run --rm backend npm run typeorm:migration:run"
 alias dbs="docker compose run --rm backend npm run typeorm:migration:seed"
+alias dbr="docker compose run --rm backend npm run typeorm:migration:revert"
 
 alias mux=tmuxinator
 alias muxconf="cd ~/.config/tmuxinator"
