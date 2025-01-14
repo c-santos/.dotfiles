@@ -6,6 +6,22 @@ repo for Dotfiles
 
 - [ ] Better install scripts.
 
+## Step
+1. Install **Homebrew**
+2. Install Git if not yet
+3. **Clone** this repo
+2. Install **zsh**
+3. Install **zinit** plugin manager
+4. Install dependencies with Homebrew
+
+```sh
+brew install neovim;
+brew install fzf;
+brew install fd;
+brew install unzip;
+brew install ripgrep; #nvim: for telescope
+```
+
 ## Windows Setup
 
 Double check file locations in the `setup.ps1` file and run it to setup a Windows Terminal.
@@ -84,13 +100,18 @@ For WSL,
 ln -s ~/.dotfiles/.zshrc.wsl ~/.zshrc
 ```
 
-## Alacritty
+## Alacritty and Wezterm
 
 For MacOS,
 
 ```sh
 # alacritty config
 ln -s ~/.dotfiles/alacritty/alacritty_macos.toml ~/.config/alacritty/alacritty.toml
+```
+
+```sh
+# wezterm config
+ln -s ~/.dotfiles/wezterm ~/.config/weztermtoml
 ```
 
 ```sh
@@ -117,18 +138,6 @@ ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 On initial setup, `Ctrl+I` to install plugins. `Ctrl+b` to source the config file.
 After that tmux prefix is now set to `Ctrl+s`.
 
-## tmuxinator
-
-tmux session templater using yaml files.
-
-``` sh
-brew install tmuxinator
-```
-
-Add templates to `~/.config/tmuxinator/sample.yml`.
-
-Run template session with `[tmuxinator]/[mux] sample`.
-
 ## Neovim
 
 ```sh
@@ -136,7 +145,6 @@ ln -s ~/.dotfiles/nvim ~/.config/nvim
 ```
 
 Load initial Neovim config to allow Lazy and Mason to install.
-
 
 ## VSCode
 
@@ -148,8 +156,7 @@ These are synced through my GitHub profile.
 
 Here a list of fonts I like: 
 
-- Hack Nerd Font
 - FiraCode Nerd Font
+- Hack Nerd Font
+- CodeNewRoman Nerd Font
 - JetBrains Nerd Font
-- GeistMono Nerd Font
-- SauceCodePro Nerd Font
