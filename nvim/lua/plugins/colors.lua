@@ -13,7 +13,7 @@ return {
         "folke/tokyonight.nvim",
         config = function()
             require("tokyonight").setup({
-                transparent = true,
+                transparent = false,
                 terminal_colors = true,
                 styles = {
                     comments = { italic = false },
@@ -106,7 +106,7 @@ return {
             require("rose-pine").setup({
                 terminal_colors = true,
                 styles = {
-                    transparency = true,
+                    transparency = false,
                     italic = false,
                     bold = true,
                 },
@@ -171,7 +171,7 @@ return {
                 -- style = 'light'
 
                 -- Enable transparent background
-                transparent = true,
+                transparent = false,
 
                 -- Enable italic comment
                 italic_comments = true,
@@ -205,16 +205,8 @@ return {
         config = function()
             require("nightfox").setup({
                 options = {
-                    transparent = true,
+                    transparent = false,
                 },
-            })
-        end,
-    },
-    {
-        "cpwrs/americano.nvim",
-        config = function()
-            require("americano").setup({
-                terminal = true,
             })
         end,
     },
@@ -223,15 +215,6 @@ return {
         config = function()
             vim.g.gruvbox_material_enable_italic = true
             vim.g.gruvbox_material_background = "hard"
-        end
-    },
-    {
-        "navarasu/onedark.nvim",
-        config = function()
-            require('onedark').setup({
-                termcolors = true,
-                style = "darker"
-            })
         end
     },
 }
