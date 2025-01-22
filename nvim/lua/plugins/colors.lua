@@ -13,7 +13,7 @@ return {
         "folke/tokyonight.nvim",
         config = function()
             require("tokyonight").setup({
-                transparent = false,
+                transparent = true,
                 terminal_colors = true,
                 styles = {
                     comments = { italic = false },
@@ -123,7 +123,7 @@ return {
                 -- Enable editor background transparency.
                 transparent = {
                     -- Enable transparent background.
-                    bg = false,
+                    bg = true,
                     -- Enable transparent background for floating windows.
                     float = false,
                 },
@@ -171,7 +171,7 @@ return {
                 -- style = 'light'
 
                 -- Enable transparent background
-                transparent = false,
+                transparent = true,
 
                 -- Enable italic comment
                 italic_comments = true,
@@ -205,7 +205,7 @@ return {
         config = function()
             require("nightfox").setup({
                 options = {
-                    transparent = false,
+                    transparent = true,
                 },
             })
         end,
