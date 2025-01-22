@@ -35,3 +35,6 @@ ln -s ~/.dotfiles/.tmux.conf ~;
 
 # Allow to use Docker in WSL without sudo
 sudo chmod 666 /var/run/docker.sock
+
+# Install github cli
+# Maybe we could find a better way to authenticate without PATs
