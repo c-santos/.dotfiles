@@ -8,6 +8,7 @@ sudo apt install zip;
 sudo apt install ripgrep;
 sudo apt install fdfind;
 sudo apt install fzf;
+sudo apt install xclip;
 sudo apt install tmux;
 
 mkdir ~/.config;
