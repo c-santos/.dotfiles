@@ -33,7 +33,7 @@ local randomize_colors = function ()
   Color(chosen)
 end
 
-randomize_colors()
+-- randomize_colors()
 
 -- Color('Tokyonight-night')
 -- Color('rose-pine-moon')
@@ -41,7 +41,5 @@ randomize_colors()
 -- Color('catppuccin')
 -- Color('kanagawa-dragon')
 -- Color('nordic')
--- Color('duskfox')
--- Color('americano')
+Color('carbonfox')
 -- Color("gruvbox-material")
--- Color("onedark")
