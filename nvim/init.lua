@@ -42,4 +42,5 @@ end
 -- Color('kanagawa-dragon')
 -- Color('nordic')
 Color('carbonfox')
+-- Color('dayfox')
 -- Color("gruvbox-material")
