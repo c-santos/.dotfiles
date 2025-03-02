@@ -151,7 +151,7 @@ generate_migration() {
 alias dbg=generate_migration
 
 alias dbm="docker compose run --rm backend npm run typeorm:migration:run"
-alias dbs="docker compose run --rm backend npm run typeorm:migration:seed"
+alias dbs="docker compose run --rm backend npm run seed:run"
 alias dbr="docker compose run --rm backend npm run typeorm:migration:revert"
 
 alias mux=tmuxinator
