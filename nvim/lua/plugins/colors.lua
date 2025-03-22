@@ -13,7 +13,7 @@ return {
         "folke/tokyonight.nvim",
         config = function()
             require("tokyonight").setup({
-                transparent = true,
+                transparent = false,
                 terminal_colors = true,
                 styles = {
                     comments = { italic = false },
@@ -94,7 +94,7 @@ return {
         name = "catppucin",
         config = function()
             require("catppuccin").setup({
-                transparent_background = true,
+                transparent_background = false,
                 term_colors = true,
             })
         end,
@@ -174,7 +174,7 @@ return {
                 transparent = true,
 
                 -- Enable italic comment
-                italic_comments = true,
+                italic_comments = false,
 
                 -- Underline `@markup.link.*` variants
                 underline_links = true,
