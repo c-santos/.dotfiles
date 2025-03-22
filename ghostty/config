@@ -1,15 +1,32 @@
+# appearance
+font-size = 14
 # font-family = FiraCode Nerd Font
 # font-family = CodeNewRoman Nerd Font Mono
 # font-family = Hack Nerd Font
 # font-family = JetBrainsMono Nerd Font
-font-family = VictorMono Nerd Font
+# font-family = VictorMono Nerd Font
 # font-family = IosevkaTerm Nerd Font
 # font-family = ZedMono Nerd Font
-font-size = 14
+font-family = GeistMono Nerd Font Mono
+# font-family = CommitMono Nerd Font
+bold-is-bright = true
+
 # theme = dayfox
-# theme = Tomorrow Night Bright
-theme = carbonfox
+# theme = carbonfox
+theme = CutiePro
+
 window-decoration = true
+window-padding-balance = true
 window-padding-x = 8,8
-macos-titlebar-style = tabs
+# background-opacity = 0.85
+# background-blur = 15
+
 cursor-style = block
+cursor-style-blink = false
+
+# behavior
+auto-update = check
+auto-update-channel = stable
+macos-titlebar-style = transparent
+
+shell-integration-features = true
