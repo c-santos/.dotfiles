@@ -2,8 +2,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussel" # set by `omz`
-ZSH_THEME="intheloop" # set by `omz`
+ZSH_THEME="robbyrussell" # set by `omz`
+# ZSH_THEME="intheloop" # set by `omz`
 # ZSH_THEME="sorin" # set by `omz`
 
 CASE_SENSITIVE=false

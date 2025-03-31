@@ -13,8 +13,8 @@ bold-is-bright = true
 
 # theme = dayfox
 # theme = carbonfox
-theme = CutiePro
-# theme = catppuccin-mocha
+# theme = CutiePro
+theme = catppuccin-mocha
 
 window-decoration = true
 window-padding-balance = true
