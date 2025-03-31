@@ -46,10 +46,10 @@ end
 
 -- auto_light_mode('dayfox', 'carbonfox')
 
-Color('Tokyonight-night')
+-- Color('Tokyonight-night')
 -- Color('rose-pine-moon')
 -- Color('vscode')
--- Color('catppuccin')
+Color('catppuccin-mocha')
 -- Color('kanagawa-dragon')
 -- Color('nordic')
 -- Color("carbonfox")
