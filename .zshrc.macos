@@ -82,6 +82,7 @@ alias grn='git branch -m'
 alias gt='git log --all --decorate --oneline --graph'
 alias gb='git branch -a -vv'
 alias gsl='git stash list'
+alias gsp='git stash pop'
 
 checkout_advanced() {
     if [[ -n $1 ]] then
@@ -117,7 +118,6 @@ reset-soft-commit() {
 }
 alias grs=reset-soft-commit
 
-PATH=~/.console-ninja/.bin:$PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
 PATH=$PATH:$ANDROID_HOME/emulator
 PATH=$PATH:$ANDROID_HOME/platform-tools
