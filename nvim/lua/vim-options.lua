@@ -20,7 +20,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
 vim.g.have_nerd_font = true
--- vim.opt.guicursor = "" -- block cursor on insert mode
+vim.opt.guicursor = "" -- block cursor on insert mode
 vim.opt.colorcolumn = "80"
 
 -- buffer behavior settings
