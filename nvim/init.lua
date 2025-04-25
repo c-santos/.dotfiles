@@ -48,8 +48,10 @@ end
 
 -- Color('Tokyonight-night')
 -- Color('rose-pine-moon')
+-- Color('moonfly')
+Color('nightfly')
 -- Color('vscode')
-Color('catppuccin-mocha')
+-- Color('catppuccin-mocha')
 -- Color('kanagawa-dragon')
 -- Color('nordic')
 -- Color("carbonfox")
