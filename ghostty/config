@@ -1,20 +1,21 @@
 # appearance
 font-size = 14
 # font-family = FiraCode Nerd Font
+font-family = Maple Mono NF
 # font-family = CodeNewRoman Nerd Font Mono
 # font-family = Hack Nerd Font
 # font-family = JetBrainsMono Nerd Font
 # font-family = VictorMono Nerd Font
 # font-family = IosevkaTerm Nerd Font
 # font-family = ZedMono Nerd Font
-font-family = GeistMono Nerd Font Mono
+# font-family = GeistMono Nerd Font Mono
 # font-family = CommitMono Nerd Font
 bold-is-bright = true
 
 # theme = dayfox
 # theme = carbonfox
-# theme = CutiePro
-theme = catppuccin-mocha
+theme = CutiePro
+# theme = catppuccin-mocha
 
 window-decoration = true
 window-padding-balance = true
