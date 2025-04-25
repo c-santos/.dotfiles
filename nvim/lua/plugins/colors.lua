@@ -215,6 +215,16 @@ return {
         config = function()
             vim.g.gruvbox_material_enable_italic = true
             vim.g.gruvbox_material_background = "hard"
-        end
+        end,
+    },
+    {
+        "bluz71/vim-nightfly-colors",
+        config = function()
+        end,
+    },
+    {
+        "bluz71/vim-moonfly-colors",
+        config = function()
+        end,
     },
 }
