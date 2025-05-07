@@ -7,9 +7,9 @@ M.setup = function(config)
     -- config.colors = require("kanagawa-dragon")
 
     -- Wezterm themes
-    config.color_scheme = "carbonfox"
+    -- config.color_scheme = "carbonfox"
     -- config.color_scheme = "Nord (Gogh)"
-    -- config.color_scheme = "Catppuccin Mocha"
+    config.color_scheme = "Catppuccin Mocha"
 end
 
 return M

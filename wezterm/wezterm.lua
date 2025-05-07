@@ -3,13 +3,12 @@ local wz = require("wezterm")
 local config = wz.config_builder()
 
 GetOS = function()
-    if
-        wz.target_triple:find("linux") ~= nil
-        or wz.target_triple:find("apple") ~= nil
-    then
-        return "unix"
+    if wz.target_triple:find("apple") then
+        return "macos"
     elseif wz.target_triple:find("windows") then
         return "windows"
+    elseif wz.target_triple:find("linux") then
+        return "linux"
     end
 end
 
