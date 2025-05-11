@@ -1,6 +1,11 @@
+alias l="ls -latr"
+
 # Config Quick Access
 alias dots="cd ~/.dotfiles"
-alias zshconf="nvim ~/.zshrc"
+
+alias zshconf="nvim $ZDOTDIR/.zshrc"
+alias zshenv="nvim ~/.zshenv"
+
 alias nvconf="cd ~/.config/nvim; nvim ."
 alias alaconf="nvim ~/.config/alacritty"
 alias tmuxconf="nvim ~/.tmux.conf"
@@ -9,7 +14,7 @@ alias ghostconf="nvim ~/.config/ghostty/config"
 alias aliases="nvim ~/.bash_aliases"
 
 # Quick Source Shell
-alias refresh="source ~/.zshrc"
+alias refresh="source $ZDOTDIR/.zshrc"
 
 # Directory Quick Access
 alias dev="cd ~/Dev"
