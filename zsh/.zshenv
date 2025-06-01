@@ -18,3 +18,5 @@ export SAVEHIST=10000
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# PYTHON
+export PATH="$PATH:$HOME/.local/bin"
