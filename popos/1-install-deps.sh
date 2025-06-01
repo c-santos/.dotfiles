@@ -4,4 +4,5 @@ sudo apt install fdfind;
 sudo apt install ripgrep;
 sudo apt install curl;
 sudo apt install zsh;
+sudp apt install xclip;
 
