@@ -1,6 +1,7 @@
 alias l="ls -latr"
 
 # Config Quick Access
+alias conf="cd $XDG_CONFIG_HOME"
 alias dots="cd ~/.dotfiles"
 
 alias zshconf="nvim $ZDOTDIR/.zshrc"
@@ -15,6 +16,8 @@ alias aliases="nvim ~/.bash_aliases"
 
 # Quick Source Shell
 alias refresh="source $ZDOTDIR/.zshrc"
+# Quick Source Zsh Env
+alias refreshenv="source $HOME/.zshenv"
 
 # Directory Quick Access
 alias dev="cd ~/Dev"
