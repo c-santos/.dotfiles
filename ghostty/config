@@ -1,7 +1,7 @@
 # appearance
-font-size = 14
+font-size = 12
 # font-family = FiraCode Nerd Font
-font-family = Maple Mono NF
+# font-family = Maple Mono NF
 # font-family = CodeNewRoman Nerd Font Mono
 # font-family = Hack Nerd Font
 # font-family = JetBrainsMono Nerd Font
@@ -10,21 +10,23 @@ font-family = Maple Mono NF
 # font-family = ZedMono Nerd Font
 # font-family = GeistMono Nerd Font Mono
 # font-family = CommitMono Nerd Font
+font-family = UbuntuSans Mono
 bold-is-bright = true
 
 # theme = dayfox
 # theme = carbonfox
+# theme = nordfox
 theme = CutiePro
 # theme = catppuccin-mocha
 
 window-decoration = true
 window-padding-balance = true
 window-padding-x = 8,8
-# background-opacity = 0.85
+background-opacity = 0.9
 # background-blur = 15
 
 cursor-style = block
-cursor-style-blink = false
+cursor-style-blink = true
 
 # behavior
 auto-update = check
