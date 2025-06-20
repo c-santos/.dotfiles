@@ -12,7 +12,7 @@ alias alaconf="nvim ~/.config/alacritty"
 alias tmuxconf="nvim ~/.tmux.conf"
 alias wezconf="cd ~/.config/wezterm; nvim ."
 alias ghostconf="nvim ~/.config/ghostty/config"
-alias aliases="nvim ~/.bash_aliases"
+alias aliases="nvim $ZDOTDIR/.bash_aliases"
 
 # Quick Source Shell
 alias refresh="source $ZDOTDIR/.zshrc"
@@ -20,6 +20,7 @@ alias refresh="source $ZDOTDIR/.zshrc"
 alias refreshenv="source $HOME/.zshenv"
 
 # Directory Quick Access
+alias home="cd ~"
 alias dev="cd ~/Dev"
 alias me="cd ~/Personal"
 alias notes="cd ~/notes"
@@ -81,7 +82,9 @@ alias grs=reset-soft-commit
 # deps: fzf, fdfind
 find_project() {
     local proj
-    proj=$(fd . ~/Dev --type d -a -d 1 | fzf-tmux -p)
+
+    # find cmd changes dep on OS
+    proj=$(fdfind . ~/Dev --type d -a -d 1 | fzf-tmux -p)
 
     if [[ -n $proj ]] then
         echo "\n\t🛬 You are now in: $proj\n"
