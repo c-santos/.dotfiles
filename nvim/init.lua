@@ -18,42 +18,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-local randomize_colors = function()
-    local choices = {
-        "rose-pine-moon",
-        "vscode",
-        "catppuccin",
-        "kanagawa-dragon",
-        "nordic",
-        "duskfox",
-        "gruvbox-material",
-    }
-    local chosen = choices[math.random(#choices)]
-    print("Loaded theme: ", chosen)
-    Color(chosen)
+-- Load theme
+local success, theme = pcall(function() return require("theme") end)
+if success then
+    Color(theme.dark, theme.light)
+else
+    theme = require("theme-default")
+    Color(theme.dark, theme.light)
 end
 
-local auto_light_mode = function(light_theme, night_theme)
-    local t = os.date("*t")
-    if t.wday == 2 or t.wday == 4 then
-        if t.hour < 16 then
-            Color(light_theme)
-        end
-    else
-        Color(night_theme)
-    end
-end
-
--- auto_light_mode('dayfox', 'carbonfox')
-
--- Color('Tokyonight-night')
--- Color('rose-pine-moon')
--- Color('moonfly')
--- Color('nightfly')
--- Color('vscode')
--- Color('catppuccin-mocha')
--- Color('kanagawa-dragon')
-Color('nordic')
--- Color("carbonfox")
--- Color("dayfox")
--- Color("gruvbox-material")
+print("oh hello there")

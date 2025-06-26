@@ -1,11 +1,43 @@
-Color = function(color)
-    color = color or "catppuccin"
-    vim.cmd.colorscheme(color)
+-- Color helper functions
+local auto_light_mode = function(dark_theme, light_theme)
+    local t = os.date("*t")
+    if t.wday == 2 or t.wday == 4 then
+        if t.hour < 16 then
+            vim.cmd.colorscheme(light_theme)
+        end
+    else
+        vim.cmd.colorscheme(dark_theme)
+    end
+end
+
+Color = function(dark_theme, light_theme)
+    local light_theme = light_theme or nil
+
+    if light_theme then
+        auto_light_mode(dark_theme, light_theme)
+    else
+        vim.cmd.colorscheme(dark_theme)
+    end
 
     -- background
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalDark", { bg = "none" })
+end
+
+local randomize_colors = function()
+    local choices = {
+        "rose-pine-moon",
+        "vscode",
+        "catppuccin",
+        "kanagawa-dragon",
+        "nordic",
+        "duskfox",
+        "gruvbox-material",
+    }
+    local chosen = choices[math.random(#choices)]
+    print("Loaded theme: ", chosen)
+    Color(chosen)
 end
 
 return {
