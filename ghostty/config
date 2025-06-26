@@ -10,7 +10,7 @@ font-size = 12
 # font-family = ZedMono Nerd Font
 # font-family = GeistMono Nerd Font Mono
 # font-family = CommitMono Nerd Font
-font-family = UbuntuSans Mono
+font-family = Ubuntu Sans Mono
 bold-is-bright = true
 
 # theme = dayfox
@@ -33,4 +33,10 @@ auto-update = check
 auto-update-channel = stable
 macos-titlebar-style = transparent
 
+gtk-titlebar = true
+gtk-adwaita = true
+gtk-titlebar-hide-when-maximized = true
+adw-toolbar-style = raised
+
+shell-integration = zsh
 shell-integration-features = true
