@@ -27,4 +27,4 @@ else
     Color(theme.dark, theme.light)
 end
 
-print("oh hello there")
+print("oh hello there -- nvim version", vim.version())
