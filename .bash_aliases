@@ -65,9 +65,12 @@ alias gsa=apply-stash
 
 open-git-remote() {
     repo_url=$(git remote get-url origin)
-    if [[  repo_url == *"https://"  ]]; then
+    echo $repo_url
+    if [[  $repo_url == *"https://"*  ]]; then
+        echo "https"
         xdg_open "$repo_url"
-    elif [[ repo_url == *"git@" ]]; then
+    elif [[ $repo_url == *"git@"* ]]; then
+        echo "ssh"
         echo "$repo_url"
         domain=$(git remote get-url origin | cut -d "@" -f2 | cut -d ":" -f1)
         owner=$(git remote get-url origin | cut -d ":" -f2 | cut -d "/" -f1)
