@@ -25,6 +25,7 @@ return {
 				html = { "prettier" },
 				json = { "prettier" },
 				lua = { "stylua" },
+				python = { "autopep8" }
 			},
 		})
 	end,
