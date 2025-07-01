@@ -138,7 +138,7 @@ return {
             require("rose-pine").setup({
                 terminal_colors = true,
                 styles = {
-                    transparency = false,
+                    transparency = true,
                     italic = false,
                     bold = true,
                 },
