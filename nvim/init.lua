@@ -18,13 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
--- Load theme
-local success, theme = pcall(function() return require("theme") end)
-if success then
-    Color(theme.dark, theme.light)
-else
-    theme = require("theme-default")
-    Color(theme.dark, theme.light)
-end
+Color("rose-pine-moon")
 
-print("oh hello there -- nvim version", vim.version())
+print("oh hello there -- nvim version ", vim.version())
