@@ -5,7 +5,6 @@ local language_servers = {
     "cssls",
     "docker_compose_language_service",
     "dockerls",
-    "pylsp",
     "tailwindcss"
 }
 
