@@ -25,7 +25,8 @@ return {
 				html = { "prettier" },
 				json = { "prettier" },
 				lua = { "stylua" },
-				python = { "autopep8" }
+				python = { "autopep8" },
+				go = { "gopls" }
 			},
 		})
 	end,
