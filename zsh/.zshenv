@@ -21,3 +21,6 @@ export VISUAL="nvim"
 # PYTHON
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/bin/openssl"
+
+# GO
+export PATH=$PATH:/usr/local/go/bin
