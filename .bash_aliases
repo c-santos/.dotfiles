@@ -67,18 +67,14 @@ open-git-remote() {
     repo_url=$(git remote get-url origin)
     echo $repo_url
     if [[  $repo_url == *"https://"*  ]]; then
-        echo "https"
-        xdg_open "$repo_url"
+        explorer.exe "$repo_url"
     elif [[ $repo_url == *"git@"* ]]; then
-        echo "ssh"
-        echo "$repo_url"
         domain=$(git remote get-url origin | cut -d "@" -f2 | cut -d ":" -f1)
         owner=$(git remote get-url origin | cut -d ":" -f2 | cut -d "/" -f1)
         repo=$(git remote get-url origin | cut -d "/" -f2)
 
         https_url="https://$domain/$owner/$repo"
-        echo "$https_url"
-        xdg-open "$https_url"
+        explorer.exe "$https_url"
     fi
 }
 alias remote=open-git-remote
