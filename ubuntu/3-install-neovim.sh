@@ -1,4 +1,4 @@
-sudo apt gcc
+sudo apt install gcc
 sudo apt install fzf
 sudo apt install fdfind
 sudo apt install xclip

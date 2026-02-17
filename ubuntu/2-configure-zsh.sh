@@ -8,6 +8,7 @@ sudo ln -s ~/.dotfiles/zsh/.zshrc $ZDOTDIR/.zshrc
 # Install starship.rs prompt
 sudo curl -sS https://starship.rs/install.sh | sh
 echo 'eval "$(starship init zsh)"' >> $ZDOTDIR/.zshrc
+echo 'source $ZDOTDIR/.bash_aliases' >> $ZDOTDIR/.zshrc
 
 . $ZDOTDIR/.zshrc
 
