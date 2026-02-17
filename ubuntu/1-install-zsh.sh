@@ -3,7 +3,7 @@
 sudo apt install zsh
 
 # Create zsh config directory
-mkdir $XDG_CONFIG_HOME/zsh
+mkdir ~/.config/zsh
 
 # Setup ZSH environment
 sudo ln -s $HOME/.dotfiles/zsh/.zshenv $HOME/.zshenv
