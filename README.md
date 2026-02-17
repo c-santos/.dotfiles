@@ -1,12 +1,10 @@
 # Dotfiles
+Repo for my dotfiles. Any config that I can save as code is here :)
 
-repo for Dotfiles
+## Setup
+Setup scripts are split up by OS. So generally, there are 3 ways:
 
-## Todo
-
-- [ ] Better install scripts.
-
-## Step
+### MacOS (needs updating)
 1. Install **Homebrew**
 2. Install Git if not yet
 3. **Clone** this repo
@@ -23,69 +21,36 @@ brew install ripgrep; #nvim: for telescope
 ```
 5. Install NVM manually
 
-## Windows Setup
+### Windows
 
-Double check file locations in the `setup.ps1` file and run it to setup a Windows Terminal.
+Windows has both the OS itself and WSL to configure.
+
+For Windows itself, double check file locations in the `setup.ps1` file and run it to setup a Windows Terminal.
 
 ```sh
 . /setup.ps1
 ```
 
+For WSL, it will depend on the distro. Ubuntu is my common choice so scripts in
+`/ubuntu` should work fine. See more at `ws/README.md`
+
+### Linux
+
+Only scripts for Ubuntu is properly setup for now. Most of the required defaults
+to run the setup scripts are already installed in Ubuntu so just run and see
+what happens :)
+
 ## Creating a symlink
 
-MacOS/Linux
+Dotfiles are built on the concept of symlinking so I'm keeping it here in case it
+comes handy.
 
 ``` sh
+# MacOS/Linux
 ln -s ~/path/to/original ~/path/to/destination
-```
 
-Windows
-
-``` sh
+# Windows
 New-Item -ItemType SymbolicLink -Path "E:\Files\Documents\WindowsPowershell\Microsoft.Powershell_profile.ps1" -Target "E:\Files\dev\.dotfiles\windows\Microsoft.Powershell_profile.ps1"
-```
-
-## Zshrc symlink
-
-For MacOS,
-
-```sh
-ln -s ~/.dotfiles/.zshrc.macos ~/.zshrc
-```
-
-For WSL,
-
-```sh
-ln -s ~/.dotfiles/.zshrc.wsl ~/.zshrc
-```
-
-## Alacritty and Wezterm
-
-For MacOS,
-
-```sh
-# alacritty config
-ln -s ~/.dotfiles/alacritty/alacritty_macos.toml ~/.config/alacritty/alacritty.toml
-```
-
-```sh
-# wezterm config
-ln -s ~/.dotfiles/wezterm ~/.config/weztermtoml
-```
-
-```sh
-# kanagawa theme
-ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml ~/.config/alacritty/kanagawa_dragon.toml
-```
-
-For WSL,
-
-```sh
-ln -s ~/.dotfiles/alacritty/alacritty_wsl.toml /mnt/c/Users/{username}/AppData/Roaming/alacritty/alacritty.toml
-```
-
-```sh
-ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml /mnt/c/Users/{username}/AppData/Roaming/alacritty/kanagawa_dragon.toml
 ```
 
 ## tmux
@@ -94,28 +59,19 @@ ln -s ~/.dotfiles/alacritty/kanagawa_dragon.toml /mnt/c/Users/{username}/AppData
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ```
 
-On initial setup, `Ctrl+I` to install plugins. `Ctrl+b` to source the config file.
+On initial setup, `Ctrl+I` to install plugins. `Ctrl+r` to reload the config file.
 After that tmux prefix is now set to `Ctrl+s`.
-
-## Neovim
-
-```sh
-ln -s ~/.dotfiles/nvim ~/.config/nvim
-```
-
-Load initial Neovim config to allow Lazy and Mason to install.
-
-## VSCode
-
-- keybindings json
-- settings json
-These are synced through my GitHub profile.
 
 ## Fonts
 
-Here a list of fonts I like: 
+Here a list of fonts I like:
 
 - FiraCode Nerd Font
 - Hack Nerd Font
 - CodeNewRoman Nerd Font
 - JetBrains Nerd Font
+
+## Todo
+
+- [ ] Better install scripts.
+
