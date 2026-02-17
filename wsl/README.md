@@ -39,4 +39,5 @@ cd ~
 git clone https://www.github.com/c-santos/.dotfiles.git
 ```
 
-3. Follow this guide
+3. Take a read of INITIAL_SETUP.md
+4. Run the scripts in `/ubuntu` in order
