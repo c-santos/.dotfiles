@@ -19,14 +19,14 @@ return {
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
-				yaml = { "prettier" },
+				yaml = { "yamlls" },
 				markdown = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
 				lua = { "stylua" },
-				python = { "autopep8" },
-				go = { "gopls" }
+				go = { "gopls" },
+				py = { "pylsp" }
 			},
 		})
 	end,
