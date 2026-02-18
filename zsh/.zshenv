@@ -23,4 +23,6 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/bin/openssl"
 
 # GO
+export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
