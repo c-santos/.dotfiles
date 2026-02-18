@@ -138,7 +138,7 @@ return {
             require("rose-pine").setup({
                 terminal_colors = true,
                 styles = {
-                    transparency = true,
+                    transparency = false,
                     italic = false,
                     bold = true,
                 },
@@ -245,18 +245,35 @@ return {
     {
         "sainnhe/gruvbox-material",
         config = function()
-            vim.g.gruvbox_material_enable_italic = true
+            vim.g.gruvbox_material_enable_italic = false
             vim.g.gruvbox_material_background = "hard"
         end,
     },
     {
-        "bluz71/vim-nightfly-colors",
+        "vague-theme/vague.nvim",
         config = function()
-        end,
+            -- NOTE: you do not need to call setup if you don't want to.
+            require("vague").setup({
+                -- optional configuration here
+                italic = false,
+                transparent = false,
+                style = {
+                    boolean = "none"
+                }
+            })
+        end
     },
     {
-        "bluz71/vim-moonfly-colors",
+        'ribru17/bamboo.nvim',
         config = function()
+            require('bamboo').setup {
+                -- optional configuration here
+                style = 'vulgaris',
+                transparent = false,
+                code_style = {
+                    comments = { italic = false }
+                }
+            }
         end,
     },
 }
