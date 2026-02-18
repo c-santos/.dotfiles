@@ -45,7 +45,7 @@ return {
             local data = custom_fname.super.update_status(self)
             data = highlight.component_format_highlight(
                 vim.bo.modified and self.status_colors.modified
-                    or self.status_colors.saved
+                or self.status_colors.saved
             ) .. data
             return data
         end
@@ -69,6 +69,7 @@ return {
                 lualine_c = {
                     {
                         custom_fname,
+                        path = 3
                     },
                     {
                         "diff",
