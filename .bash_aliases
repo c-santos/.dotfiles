@@ -32,7 +32,17 @@ alias v="nvim ."
 alias dc="docker compose"
 
 # Git aliases
-alias gmp='git checkout master; git pull;'
+pull_main() {
+    if git rev-parse --verify main >/dev/null 2>&1; then
+        git checkout main && git pull;
+    elif git rev-parse --verify master >/dev/null 2>&1; then
+        git checkout master && git pull;
+    else
+        echo "Neither main nor master branch found.";
+    fi;
+}
+
+alias gmp=pull_main
 alias gdp='git checkout develop; git pull;'
 alias gm='git checkout master'
 alias gs='git status'
