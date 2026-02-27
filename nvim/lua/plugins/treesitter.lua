@@ -50,8 +50,8 @@ return {
                 max_lines = 2,
                 trim_scope = 'inner'
             })
-            vim.cmd("hi TreesitterContextLineNumberBottom guisp=Grey")
-            vim.cmd("hi TreesitterContextBottom guisp=Grey")
+            -- vim.cmd("hi TreesitterContextLineNumberBottom guisp=Grey")
+            -- vim.cmd("hi TreesitterContextBottom guisp=Grey")
         end
     }
 }

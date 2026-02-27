@@ -1,11 +1,11 @@
 -- general vim settings
 vim.opt.termguicolors = true
 
-vim.opt.updatetime = 100
-
 vim.opt.swapfile = false
 vim.opt.backup = false
+vim.opt.timeoutlen = 750
 
+vim.opt.autoread = true
 vim.opt.undofile = true
 vim.opt.wildignore:append({ "*/node_modules/*" })
 
@@ -21,7 +21,7 @@ vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
 vim.g.have_nerd_font = true
 vim.opt.guicursor = "" -- block cursor on insert mode
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 
 -- buffer behavior settings
 
