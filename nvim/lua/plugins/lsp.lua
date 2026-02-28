@@ -108,7 +108,7 @@ return {
             ensure_installed = language_servers,
             handlers = {
                 function(server_name)
-                    require("lspconfig")[server_name].setup({
+                    vim.lsp.config(server_name, {
                         capabilities = capabilities,
                         on_attach = on_attach,
                         handlers = {
@@ -119,35 +119,32 @@ return {
                         },
                     })
                 end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        handlers = {
-                            ["textDocument/hover"] = vim.lsp.with(
-                                vim.lsp.handlers.hover,
-                                { border = "rounded" }
-                            ),
-                        },
-                        settings = {
-                            Lua = {
-                                runtime = { version = "LuaJIT" },
-                                diagnostics = {
-                                    globals = {
-                                        "bit",
-                                        "vim",
-                                        "it",
-                                        "describe",
-                                        "before_each",
-                                        "after_each",
-                                    },
+                -- special lua ls config to detect vim globals
+                vim.lsp.config("lua_ls", {
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                    handlers = {
+                        ["textDocument/hover"] = vim.lsp.with(
+                            vim.lsp.handlers.hover,
+                            { border = "rounded" }
+                        ),
+                    },
+                    settings = {
+                        Lua = {
+                            runtime = { version = "LuaJIT" },
+                            diagnostics = {
+                                globals = {
+                                    "bit",
+                                    "vim",
+                                    "it",
+                                    "describe",
+                                    "before_each",
+                                    "after_each",
                                 },
                             },
                         },
-                    })
-                end,
+                    },
+                }),
             },
         })
 
