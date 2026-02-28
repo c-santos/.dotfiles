@@ -19,9 +19,6 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        "saadparwaiz1/cmp_luasnip",
-        "rafamadriz/friendly-snippets",
-        "L3MON4D3/LuaSnip",
         "j-hui/fidget.nvim",
         "ray-x/lsp_signature.nvim",
     },
@@ -29,55 +26,28 @@ return {
         -- Setup plugins without custom config
         require("fidget").setup({})
         require("mason").setup({})
-        require("luasnip.loaders.from_vscode").lazy_load()
 
-        -- Define on_attach function for LSP.
         -- This function runs when an LSP attaches to the buffer.
         local on_attach = function(_, bufnr)
-            -- Remaps
-
-            local nmap = function(keys, func, desc)
+            local function set(mode, lhs, rhs, desc)
                 if desc then
                     desc = "LSP: " .. desc
                 end
-
-                vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+                vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
             end
 
-            nmap("K", vim.lsp.buf.hover, "Hover documentation.")
-            -- nmap("<leader>ca", function () vim.lsp.buf.code_action() end, "[C]ode [A]ction")
-            -- nmap("<leader>f", vim.lsp.buf.format, "[F]ormat")
-            nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-            nmap(
-                "gd",
-                require("telescope.builtin").lsp_definitions,
-                "[G]oto [D]efinition"
-            )
-            nmap("gb", "<c-t>", "[G]o [b]ack with tagstack")
-            nmap("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-            nmap(
-                "gr",
-                require("telescope.builtin").lsp_references,
-                "[G]oto [R]eferences"
-            )
-            nmap(
-                "gtd",
-                vim.lsp.buf.type_definition,
-                "[G]oto [T]ype [D]efinition"
-            )
-            nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-            -- Symbols in current doc / buf
-            nmap(
-                "<leader>ds",
-                require("telescope.builtin").lsp_document_symbols,
-                "[G]oto [D]ocument [Symbols]"
-            )
-            -- Symbols in whole project
-            nmap(
-                "<leader>ws",
-                require("telescope.builtin").lsp_workspace_symbols,
-                "[G]oto [W]orkspace [Symbols]"
-            )
+            set("n", "K", vim.lsp.buf.hover, "Hover documentation.")
+            set("n", "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+            set("n", "<leader>f", vim.lsp.buf.format, "[F]ormat")
+            set("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+            set("n", "gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+            set("n", "gb", "<c-t>", "[G]o [b]ack with tagstack")
+            set("n", "gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+            set("n", "gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+            set("n", "gtd", vim.lsp.buf.type_definition, "[G]oto [T]ype [D]efinition")
+            set("n", "gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+            set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+            set("n", "<leader>ws", require("telescope.builtin").lsp_workspace_symbols, "[W]orkspace [S]ymbols")
 
             -- Signature help
             local signature_help = {
@@ -86,9 +56,9 @@ return {
                     border = "rounded",
                 },
                 hint_prefix = {
-                    above = "↙ ", -- when the hint is on the line above the current line
-                    current = "← ", -- when the hint is on the same line
-                    below = "↖ ", -- when the hint is on the line below the current line
+                    above = "↙ ",
+                    current = "← ",
+                    below = "↖ ",
                 },
             }
             require("lsp_signature").on_attach(signature_help, bufnr)
@@ -103,7 +73,34 @@ return {
             require("cmp_nvim_lsp").default_capabilities()
         )
 
-        -- Setup Mason to handle LSPs.
+        -- special Lua LSP config to detect vim globals
+        vim.lsp.config("lua_ls", {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            handlers = {
+                ["textDocument/hover"] = vim.lsp.with(
+                    vim.lsp.handlers.hover,
+                    { border = "rounded" }
+                ),
+            },
+            settings = {
+                Lua = {
+                    runtime = { version = "LuaJIT" },
+                    diagnostics = {
+                        globals = {
+                            "bit",
+                            "vim",
+                            "it",
+                            "describe",
+                            "before_each",
+                            "after_each",
+                        },
+                    },
+                },
+            },
+        })
+
+        -- mason-lspconfig connects mason and nvim-lspconfig
         require("mason-lspconfig").setup({
             ensure_installed = language_servers,
             handlers = {
@@ -111,70 +108,37 @@ return {
                     vim.lsp.config(server_name, {
                         capabilities = capabilities,
                         on_attach = on_attach,
-                        handlers = {
-                            ["textDocument/hover"] = vim.lsp.with(
-                                vim.lsp.handlers.hover,
-                                { border = "rounded" }
-                            ),
-                        },
+                        -- handlers = {
+                        --     ["textDocument/hover"] = vim.lsp.with(
+                        --         vim.lsp.handlers.hover,
+                        --         { border = "rounded" }
+                        --     ),
+                        -- },
                     })
                 end,
-                -- special lua ls config to detect vim globals
-                vim.lsp.config("lua_ls", {
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                    handlers = {
-                        ["textDocument/hover"] = vim.lsp.with(
-                            vim.lsp.handlers.hover,
-                            { border = "rounded" }
-                        ),
-                    },
-                    settings = {
-                        Lua = {
-                            runtime = { version = "LuaJIT" },
-                            diagnostics = {
-                                globals = {
-                                    "bit",
-                                    "vim",
-                                    "it",
-                                    "describe",
-                                    "before_each",
-                                    "after_each",
-                                },
-                            },
-                        },
-                    },
-                }),
             },
         })
 
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
         cmp.setup({
-            snippet = {
-                expand = function(args)
-                    require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-                end,
-            },
             window = {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
-                ["<C-b>"] = cmp.mapping.scroll_docs(cmp_select),
-                ["<C-f>"] = cmp.mapping.scroll_docs(cmp_select),
+                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete({ select = true }),
                 ["<C-e>"] = cmp.mapping.abort(),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ["<CR>"] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
-                { name = "luasnip" }, -- For luasnip users.
             }, {
                 { name = "buffer" },
             }),
         })
 
+        -- Completion for buffer search
         cmp.setup.cmdline({ "/", "?" }, {
             mapping = cmp.mapping.preset.cmdline(),
             sources = {
@@ -182,6 +146,7 @@ return {
             },
         })
 
+        -- Completion for cmdline search
         cmp.setup.cmdline(":", {
             mapping = cmp.mapping.preset.cmdline(),
             sources = cmp.config.sources({
