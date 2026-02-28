@@ -115,3 +115,40 @@ find_project() {
 alias fp=find_project
 alias f='fdfind --hidden --exclude .git| fzf-tmux -p | xargs nvim'
 
+
+connect_to_logscale_cluster() {
+    read "environment? dev or prod (d/p)?"
+    if [[ $environment = "p" ]]; then
+        echo "Connecting to PROD logscale cluster... (aks-spyglass-l-prd-593b)"
+
+        az account set --subscription 2bd6b591-b2a6-4b87-b83b-f3bdb7039ad2
+        az aks get-credentials --resource-group AZ-RG-ITS-Observability-LOGSCALE-Prod-01 --name aks-spyglass-l-prd-593b --overwrite-existing
+        kubelogin convert-kubeconfig -l azurecli
+        k9s
+    elif [[ $environment = "d" ]]; then
+        echo "not configured yet... pls configure..."
+    fi
+}
+
+connect_to_core_cluster() {
+    read "environment? dev or prod (d/p)?"
+    if [[ "$environment" = "p" ]]; then
+        echo "Connecting to PROD core cluster... (aks-spyglass-c-prd-80fe)"
+        az account set --subscription 2bd6b591-b2a6-4b87-b83b-f3bdb7039ad2
+        az aks get-credentials --resource-group AZ-RG-ITS-Observability-CORE-AKS-Prod-01 --name aks-spyglass-c-prd-80fe --overwrite-existing
+        kubelogin convert-kubeconfig -l azurecli
+        k9s
+    elif [[ "$environment" = "d" ]]; then
+        echo "Connecting to DEV core cluster... (aks-spyglass-c-dev-ee8c)"
+        az account set --subscription efe1f290-b6e7-4375-9359-caeeb15e7c6f
+        az aks get-credentials --resource-group AZ-RG-ITS-Observability-CORE-AKS-Dev-01 --name aks-spyglass-c-dev-ee8c --overwrite-existing
+        kubelogin convert-kubeconfig -l azurecli
+        k9s
+    fi
+
+}
+
+alias kcl=connect_to_logscale_cluster
+alias kcc=connect_to_core_cluster
+
+alias c="code --remote wsl+Ubuntu-24.04 ."
