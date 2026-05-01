@@ -40,7 +40,7 @@ return {
             set("n", "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
             set("n", "<leader>f", vim.lsp.buf.format, "[F]ormat")
             set("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-            set("n", "gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+            set("n", "gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
             set("n", "gb", "<c-t>", "[G]o [b]ack with tagstack")
             set("n", "gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
             set("n", "gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
