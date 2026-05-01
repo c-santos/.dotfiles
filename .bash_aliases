@@ -31,6 +31,8 @@ alias v="nvim ."
 # Development Shortcuts
 alias dc="docker compose"
 
+alias k="kubectl"
+
 # Git aliases
 pull_main() {
     if git rev-parse --verify main >/dev/null 2>&1; then
