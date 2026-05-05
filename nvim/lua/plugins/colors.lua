@@ -256,7 +256,7 @@ return {
             require("vague").setup({
                 -- optional configuration here
                 italic = false,
-                transparent = false,
+                transparent = true,
                 style = {
                     boolean = "none"
                 }

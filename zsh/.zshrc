@@ -38,3 +38,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # Starship
 eval "$(starship init zsh)"
+
+# opencode
+export PATH=/home/carlo/.opencode/bin:$PATH
