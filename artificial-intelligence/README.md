@@ -21,6 +21,9 @@ sudo apt install zstd
 curl -fsSL https://ollama.com/install.sh | sh
 
 ```
+> !UPDATE
+> I opted to install ollama in directly on Windows instead to bypass resource/performance overhead 
+of WSL. It also natively supports AMD GPU with simple env var `OLLAMA_VULKAN=1`
 
 2. opencode
 
