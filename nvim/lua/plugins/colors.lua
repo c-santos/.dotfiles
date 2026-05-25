@@ -252,7 +252,6 @@ return {
     {
         "vague-theme/vague.nvim",
         config = function()
-            -- NOTE: you do not need to call setup if you don't want to.
             require("vague").setup({
                 -- optional configuration here
                 italic = false,
@@ -262,18 +261,5 @@ return {
                 }
             })
         end
-    },
-    {
-        'ribru17/bamboo.nvim',
-        config = function()
-            require('bamboo').setup {
-                -- optional configuration here
-                style = 'vulgaris',
-                transparent = false,
-                code_style = {
-                    comments = { italic = false }
-                }
-            }
-        end,
-    },
+    }
 }

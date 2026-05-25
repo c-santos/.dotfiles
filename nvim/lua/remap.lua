@@ -47,3 +47,42 @@ remap("n", "<c-k>", ":wincmd k<CR>")
 remap("n", "<c-j>", ":wincmd j<CR>")
 remap("n", "<c-h>", ":wincmd h<CR>")
 remap("n", "<c-l>", ":wincmd l<CR>")
+
+-- open current file + line in GitHub remote
+remap("n", "<leader>go", function()
+	local function trim(s)
+		return s:match("^%s*(.-)%s*$")
+	end
+
+	local root = trim(vim.fn.system("git rev-parse --show-toplevel 2>/dev/null"))
+	if root == "" or vim.v.shell_error ~= 0 then
+		vim.notify("Not inside a git repository", vim.log.levels.WARN)
+		return
+	end
+
+	local branch = trim(vim.fn.system("git branch --show-current 2>/dev/null"))
+	if branch == "" then
+		vim.notify("Could not determine current git branch", vim.log.levels.WARN)
+		return
+	end
+
+	local remote = trim(vim.fn.system("git remote get-url origin 2>/dev/null"))
+	if remote == "" or vim.v.shell_error ~= 0 then
+		vim.notify("No 'origin' remote found", vim.log.levels.WARN)
+		return
+	end
+
+	-- Normalise SSH → HTTPS: git@github.com:user/repo.git → https://github.com/user/repo
+	remote = remote:gsub("%.git$", "")
+	remote = remote:gsub("^git@([^:]+):", "https://%1/")
+
+	local filepath = vim.fn.expand("%:p")
+	local rel = filepath:sub(#root + 2) -- strip root + trailing slash
+	local line = vim.fn.line(".")
+
+	local url = string.format("%s/blob/%s/%s#L%d", remote, branch, rel, line)
+
+	local opener = vim.fn.has("mac") == 1 and "open" or "explorer.exe"
+	vim.fn.jobstart({ opener, url }, { detach = true })
+	vim.notify("Opened: " .. url)
+end, { desc = "Open file in GitHub" })

@@ -2,6 +2,8 @@
 - [ ] general interface / api to change the transparency config of any theme
 - [ ] tie this api to the refactored theming system
 
+- [ ] grep search within nearest directory only
+- [ ] fix tagstack jumping
 ---
 # Done:
 
