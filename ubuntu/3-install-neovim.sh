@@ -1,6 +1,6 @@
 sudo apt install gcc
 sudo apt install fzf
-sudo apt install fdfind
+sudo apt install fd-find
 sudo apt install xclip
 sudo apt install ripgrep
 
