@@ -126,7 +126,7 @@ return {
         name = "catppucin",
         config = function()
             require("catppuccin").setup({
-                transparent_background = false,
+                transparent_background = true,
                 term_colors = true,
             })
         end,
@@ -261,5 +261,12 @@ return {
                 }
             })
         end
+    },
+    {
+        "ThorstenRhau/token",
+        version = "*",
+        config = {
+            transparent = true
+        }
     }
 }
