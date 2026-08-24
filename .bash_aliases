@@ -14,10 +14,13 @@ alias wezconf="cd ~/.config/wezterm; nvim ."
 alias ghostconf="nvim ~/.config/ghostty/config"
 alias aliases="nvim $ZDOTDIR/.bash_aliases"
 
+alias aiconf="cd ~/.copilot"
+
 # Quick Source Shell
 alias refresh="source $ZDOTDIR/.zshrc"
 # Quick Source Zsh Env
 alias refreshenv="source $HOME/.zshenv"
+alias aliasref="zinit update $ZDOTDIR/.bash_aliases"
 
 # Directory Quick Access
 alias home="cd ~"
@@ -101,13 +104,16 @@ reset-soft-commit() {
 }
 alias grs=reset-soft-commit
 
+# GitHub CLI aliases
+alias ghpr='gh pr create --fill'
+
 # Fuzzy Find Aliases
 # deps: fzf, fdfind
 find_project() {
     local proj
 
     # find cmd changes dep on OS
-    proj=$(fdfind . ~/Dev --type d -a -d 1 | fzf-tmux -p)
+    proj=$(fdfind . ~/Dev --type d --type l -a -d 1 | fzf-tmux -p)
 
     if [[ -n $proj ]] then
         echo "\n\t🛬 You are now in: $proj\n"
