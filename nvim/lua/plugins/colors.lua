@@ -138,7 +138,7 @@ return {
             require("rose-pine").setup({
                 terminal_colors = true,
                 styles = {
-                    transparency = false,
+                    transparency = true,
                     italic = false,
                     bold = true,
                 },
@@ -233,16 +233,6 @@ return {
         end,
     },
     {
-        "EdenEast/nightfox.nvim",
-        config = function()
-            require("nightfox").setup({
-                options = {
-                    transparent = true,
-                },
-            })
-        end,
-    },
-    {
         "sainnhe/gruvbox-material",
         config = function()
             vim.g.gruvbox_material_enable_italic = false
@@ -262,11 +252,4 @@ return {
             })
         end
     },
-    {
-        "ThorstenRhau/token",
-        version = "*",
-        config = {
-            transparent = true
-        }
-    }
 }

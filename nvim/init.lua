@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-Color("token")
+Color("vague")
+-- Color("rose-pine-moon")
 
 print("oh hello there -- nvim version ", vim.version())
