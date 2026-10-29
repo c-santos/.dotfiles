@@ -26,6 +26,10 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # Bash aliases
 zinit snippet $ZDOTDIR/.bash_aliases
 
@@ -39,3 +43,4 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Starship
 eval "$(starship init zsh)"
 
+# . "$HOME/.config/local/share/../bin/env"
