@@ -26,6 +26,10 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # Bash aliases
 zinit snippet $ZDOTDIR/.bash_aliases
 
