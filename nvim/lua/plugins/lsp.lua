@@ -6,7 +6,8 @@ local language_servers = {
     "docker_compose_language_service",
     "dockerls",
     "tailwindcss",
-    "gopls"
+    "gopls",
+    "basedpyright"
 }
 
 return {
@@ -99,6 +100,17 @@ return {
                 },
             },
         })
+
+        -- special basedpyright config
+        vim.lsp.config("basedpyright", {
+            capabilities = capabilities,
+            settings = {
+                basedpyright = {
+                    analysis = { typeCheckingMode = "basic" },
+                },
+            },
+        })
+
 
         -- mason-lspconfig connects mason and nvim-lspconfig
         require("mason-lspconfig").setup({
