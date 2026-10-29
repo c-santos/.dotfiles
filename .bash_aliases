@@ -27,6 +27,7 @@ alias home="cd ~"
 alias dev="cd ~/Dev"
 alias me="cd ~/Personal"
 alias notes="cd ~/notes"
+alias obs="cd $HOME/Dev/obsidian_vault/PG"
 
 # Neovim
 alias v="nvim ."
